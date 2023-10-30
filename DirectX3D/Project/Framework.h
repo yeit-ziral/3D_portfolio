@@ -64,6 +64,8 @@ using namespace DirectX;
 
 #define CAMERA Camera::GetInstance()->GetTransform()
 
+#define SCENE SceneManager::GetInstance()
+
 #define RS StateManager::GetInstance()->GetRS()
 
 #define PI 3.141592
@@ -124,6 +126,7 @@ using namespace MyMath;
 
 #include "Render/State/RasterizerState.h"
 #include "Render/State/SamplerState.h"
+#include "Render/State/BlendState.h"
 #include "Render/State/StateManager.h"
 
 #include "Collider/Collider.h"
@@ -147,6 +150,8 @@ using namespace MyMath;
 #include "Object/Landscape/Terrain.h"
 #include "Object/Landscape/TerrainEditor.h"
 
+#include "Object/UI/ProgressBar.h"
+
 #include "ModelExporter/ModelType.h"
 #include "ModelExporter/ModelExporter.h"
 
@@ -159,6 +164,9 @@ using namespace MyMath;
 #include "Object/Model/Groot.h"
 #include "Object/Model/Zombie.h"
 #include "Object/Model/Knife_A.h"
+#include "Object/Model/Pumpkin.h"
+#include "Object/Model/Ghost.h"
+#include "Object/Model/Skeleton.h"
 
 #include "Scene/Scene.h"
 #include "Scene/TutorialScene.h"
@@ -171,6 +179,10 @@ using namespace MyMath;
 #include "Scene/ModelExportScene.h"
 #include "Scene/ModelAnimationScene.h"
 #include "Scene/CollisionScene.h"
+#include "Scene/GridScene.h"
+#include "Scene/ShootingScene.h"
+
+#include "Scene/SceneManager.h"
 
 #include "MainGame.h"
 

@@ -14,10 +14,11 @@ ModelExportScene::ModelExportScene()
 	//exporter->ExportClip("Throw");
 
 
-	reader = new ModelReader(name);
-	
-	reader->SetShader(L"NormalMapping");
+	//reader = new ModelReader(name);
 	//
+	//reader->SetShader(L"NormalMapping");
+	
+
 	//bodyparts.resize(reader->GetMeshes().size());
 	//
 	//for (UINT i = 0; i < reader->GetMeshes().size(); i++)
@@ -29,8 +30,10 @@ ModelExportScene::ModelExportScene()
 	//model = new ModelA(name);
 
 	model = new Model(name);
+	//model->scale *= 0.01;
 
 	//groot = new Groot();
+	pumpkin = new Ghost();
 }
 
 ModelExportScene::~ModelExportScene()
@@ -52,6 +55,8 @@ void ModelExportScene::Update()
 	model->Update();
 
 	//groot->Update();
+
+	pumpkin->Update();
 }
 
 void ModelExportScene::PreRender()
@@ -68,11 +73,16 @@ void ModelExportScene::Render()
 	model->Render();
 
 	//groot->Render();
+
+	pumpkin->Render();
 }
 
 void ModelExportScene::PostRender()
 {
 	model->GetReader()->Debug();
+	model->Debug();
 
 	//groot->Debug();
+
+	pumpkin->Debug();
 }
