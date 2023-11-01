@@ -110,6 +110,17 @@ void Groot::UpdateLeftHand()
 	weapon->Update();
 }
 
+void Groot::UpdateHead()
+{
+	UINT nodeIndex = reader->GetNodeIndex("mixamorig:LeftEye");
+
+	Matrix nodeTransform = GetTransformByNode(nodeIndex);
+
+	leftHand->GetWorld() = nodeTransform * world;
+
+	weapon->Update();
+}
+
 void Groot::SetClip(AnimState state)
 {
 	if (curState != state)
@@ -125,13 +136,13 @@ void Groot::Move()
 	{
 		if (KEY_PRESS('W'))
 		{
-			Ray ray = Camera::GetInstance()->ScreenPointToRay({ WIN_WIDTH * 0.5f, WIN_HEIGHT * 0.5f, 0.0f });
+			//Ray ray = Camera::GetInstance()->ScreenPointToRay({ WIN_WIDTH * 0.5f, WIN_HEIGHT * 0.5f, 0.0f });
 
-			Vector2 dir = { ray.direction.x, ray.direction.z };
-			
-			float theta = -atan2f(dir.y, dir.x) * 2;
+			//Vector2 dir = { ray.direction.x, ray.direction.z };
+			//
+			//float theta = -atan2f(dir.y, dir.x) * 2;
 
-			rotation.y = theta + (PI * 1.304f);//Camera::GetInstance()->GetRotY();
+			//rotation.y = theta + (PI * 1.304f);//Camera::GetInstance()->GetRotY();
 			translation -= Forward() * moveSpeed * Time::Delta();
 			SetClip(RUN);
 		}
