@@ -7,8 +7,9 @@ Camera::Camera()
 
 	transform = new Transform();
 
-	transform->translation = { 100, 120, -100 };
-	transform->rotation.x = 0.65f;
+	//transform->translation = { 100, 120, -100 };
+	//transform->rotation.x = 0.65f;
+	//transform->rotation.y = 0.65f;
 
 	Load();
 }
@@ -62,7 +63,7 @@ Ray Camera::ScreenPointToRay(Vector3 screenPos) // screenPos : Near Plane¿¡ ÂïÈ÷
 	Ray ray;
 	ray.origin = transform->translation;
 
-	///////////////////Direction
+	///////////////////Direction(Inverse ViewPort)
 
 	Vector3 point;
 
@@ -90,6 +91,21 @@ Ray Camera::ScreenPointToRay(Vector3 screenPos) // screenPos : Near Plane¿¡ ÂïÈ÷
 	ray.direction.Normalize();
 
 	return ray;
+}
+
+Vector3 Camera::WorldToScreenPoint(Vector3 worldPos)
+{
+	Vector3 screenPos;
+
+	screenPos = XMVector3TransformCoord(worldPos, viewMatrix);
+	screenPos = XMVector3TransformCoord(screenPos, Environment::GetInstance()->GetProjMatrix());
+
+	screenPos = (screenPos + Vector3(1, 1, 1)) * 0.5f;
+
+	screenPos.x *= WIN_WIDTH;
+	screenPos.y *= WIN_HEIGHT;
+
+	return screenPos;
 }
 
 void Camera::FreeMode()
@@ -120,6 +136,9 @@ void Camera::FreeMode()
 			transform->translation += transform->Down()			* moveSpeed * Time::Delta();
 
 		Vector3 dir = mousePos - oldPos;
+
+		if (abs(dir.x) > 15.0f || abs(dir.y) > 15.0f)
+			dir = Vector3(0.0f, 0.0f, 0.0f);
 
 		transform->rotation.y += dir.x * rotSpeed * Time::Delta();
 		transform->rotation.x += dir.y * rotSpeed * Time::Delta();
