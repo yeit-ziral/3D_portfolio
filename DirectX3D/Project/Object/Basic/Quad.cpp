@@ -26,7 +26,8 @@ Quad::Quad(Vector2 size)
 
 	material = new Material();
 	//material->SetShader(L"Diffuse");
-	material->SetShader(L"06TextureInstancing");
+	//material->SetShader(L"06TextureInstancing");
+	material->SetShader(L"09Light");
 	//material->SetDiffuseMap(L"Landscape/Box.png");
 
 
