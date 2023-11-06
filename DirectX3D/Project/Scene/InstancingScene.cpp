@@ -15,10 +15,10 @@ InstancingScene::InstancingScene()
 	//	}
 	//}
 
-	quad = new Quad();
+	//quad = new Quad();
 
-	quad->GetMaterial()->SetDiffuseMap(L"Landscape/Box.png");
-	quad->GetMaterial()->SetShader(L"06TextureInstancing");
+	//quad->GetMaterial()->SetDiffuseMap(L"Landscape/Box.png");
+	//quad->GetMaterial()->SetShader(L"06TextureInstancing");
 
 	instanceData.resize(COUNT * COUNT);
 

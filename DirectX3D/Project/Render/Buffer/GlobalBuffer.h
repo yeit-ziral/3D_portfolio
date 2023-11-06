@@ -42,6 +42,31 @@ public:
 	} data;
 };
 
+class WorldBuffer : public ConstBuffer
+{
+public:
+	WorldBuffer()
+		: ConstBuffer(&data, sizeof(data)) // 부모의 생서자 호출해서 데이터 생성을 같이 해줌
+	{
+		data.view = XMMatrixIdentity();
+		data.hasAnimation = 0;
+	}
+
+	void SetData(Matrix view, int hasAnimation = 0)
+	{
+		data.view = XMMatrixTranspose(view);
+		data.hasAnimation = hasAnimation;
+	}
+
+private:
+	struct Data
+	{
+		Matrix view;
+		int hasAnimation;
+		Vector3 padding;
+	} data;
+};
+
 class ViewBuffer : public ConstBuffer
 {
 public:
@@ -157,6 +182,43 @@ public:
 		float padding		= 0.0f;
 
 		Frame cur, next;
+	} data;
+};
+
+class FrameInstancingBuffer : public ConstBuffer
+{
+public:
+	FrameInstancingBuffer()
+		: ConstBuffer(&data, sizeof(data))
+	{
+	}
+
+	struct Frame
+	{
+		int clip = 0;
+		UINT curFrame = 0;
+		float time = 0.0f;
+		float speed = 1.0f;
+	};
+
+	struct Motion
+	{
+		Motion()
+		{
+			next.clip = -1;// 다음 동작이 없다고 생각
+		}
+
+		float takeTime = 0.0f;
+		float tweenTime = 0.0f;
+		float runningTime = 0.0f;
+		float padding = 0.0f;
+
+		Frame cur, next;
+	};
+
+	struct Data
+	{
+		Motion motion[MAX_INSTANCE];
 	} data;
 };
 

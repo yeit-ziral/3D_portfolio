@@ -14,9 +14,12 @@ Cube::Cube(Vector4 color)
 
     //WVP
 
-    worldBuffer = new MatrixBuffer();
+    worldBuffer = new WorldBuffer();
 
     count++;
+
+    collider = new ColliderBox(this->GetGlobalPosition());
+    collider->SetParent(this);
 }
 
 Cube::~Cube()

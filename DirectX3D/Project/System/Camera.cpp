@@ -188,6 +188,8 @@ void Camera::TargetMode(Mode mode)
 		break;
 	case Camera::MODE2:
 	{
+
+
 		if (KEY_PRESS(VK_RBUTTON))
 		{
 			Vector3 dir = mousePos - oldPos;
@@ -201,8 +203,8 @@ void Camera::TargetMode(Mode mode)
 
 		oldPos = mousePos;
 
-		destRotX = LERP(target->rotation.x, transform->rotation.x, rotDamping * Time::Delta());
-		destRotY = LERP(target->rotation.y, transform->rotation.y, rotDamping * Time::Delta());
+		destRotX = LERP(destRotX, transform->rotation.x, rotDamping * Time::Delta());
+		destRotY = LERP(destRotY, transform->rotation.y, rotDamping * Time::Delta());
 
 		XMMATRIX rotMatrix = XMMatrixRotationRollPitchYaw(destRotX, destRotY + rotY, 0.0f);
 

@@ -16,7 +16,6 @@ public:
 	void PostRender();
 
 	void UpdateLeftHand();
-	void UpdateHead();
 
 	void SetClip(AnimState state);
 

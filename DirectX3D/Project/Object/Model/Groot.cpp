@@ -4,7 +4,7 @@
 Groot::Groot()
 	:ModelAnimator("Groot")
 {
-	scale *= 0.35f;
+	scale *= 0.04f;
 	ReadClip("Sad Idle");
 	ReadClip("Drunk Run Forward");
 	ReadClip("Mutant Swiping");
@@ -51,13 +51,13 @@ void Groot::Update()
 	//leftHand->Update();
 
 	if (KEY_DOWN('1'))
-		PlayClip(0, speed, takeTime);
+		PlayClip( 0, speed, takeTime);
 
 	if (KEY_DOWN('2'))
-		PlayClip(1, speed, takeTime);
+		PlayClip( 1, speed, takeTime);
 
 	if (KEY_DOWN('3'))
-		PlayClip(2, speed, takeTime);
+		PlayClip( 2, speed, takeTime);
 
 	hpBar->Update();
 	hpBar->translation = Camera::GetInstance()->WorldToScreenPoint(this->globalPosition + V_UP);
@@ -103,18 +103,7 @@ void Groot::UpdateLeftHand()
 {
 	UINT nodeIndex = reader->GetNodeIndex("mixamorig:LeftHand");
 
-	Matrix nodeTransform = GetTransformByNode(nodeIndex);
-
-	leftHand->GetWorld() = nodeTransform * world;
-
-	weapon->Update();
-}
-
-void Groot::UpdateHead()
-{
-	UINT nodeIndex = reader->GetNodeIndex("mixamorig:LeftEye");
-
-	Matrix nodeTransform = GetTransformByNode(nodeIndex);
+	Matrix nodeTransform = GetTransformByNode(nodeIndex); // 하나만 들어와서 instanceIndex에 0 넣어줌
 
 	leftHand->GetWorld() = nodeTransform * world;
 
@@ -125,7 +114,7 @@ void Groot::SetClip(AnimState state)
 {
 	if (curState != state)
 	{
-		PlayClip(state);
+		PlayClip(state);  // 하나만 들어와서 instanceIndex에 0 넣어줌
 		curState = state;
 	}
 }

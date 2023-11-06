@@ -145,6 +145,8 @@
     <ClInclude Include="Object\Model\Ghost.h" />
     <ClInclude Include="Object\Model\Pumpkin.h" />
     <ClInclude Include="Scene\GridScene.h" />
+    <ClInclude Include="Scene\LightScene.h" />
+    <ClInclude Include="Scene\ModelInstancingScene.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\CollisionScene.h" />
     <ClInclude Include="Object\Model\Knife_A.h" />
@@ -239,6 +241,8 @@
     <ClCompile Include="Object\Model\Ghost.cpp" />
     <ClCompile Include="Object\Model\Pumpkin.cpp" />
     <ClCompile Include="Scene\GridScene.cpp" />
+    <ClCompile Include="Scene\LightScene.cpp" />
+    <ClCompile Include="Scene\ModelInstancingScene.cpp" />
     <ClCompile Include="Scene\SceneManager.cpp" />
     <ClCompile Include="Scene\CollisionScene.cpp" />
     <ClCompile Include="Object\Model\Knife_A.cpp" />

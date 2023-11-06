@@ -18,12 +18,14 @@ Box::Box()
 	 quadRight->SetParent(cube);
 	  quadLeft->SetParent(cube);
 
-	   quadTop->translation.y += 0.5;
-	quadBottom->translation.y -= 0.5;
-	 quadFront->translation.z -= 0.001;
-	  quadBack->translation.z += 0.001;
-	 quadRight->translation.x -= 0.5;
-	  quadLeft->translation.x += 0.5;
+	//   quadTop->translation.y += 0.5;
+	//quadBottom->translation.y -= 0.5;
+	// quadFront->translation.z -= 0.5;
+	//  quadBack->translation.z += 0.5;
+	// quadRight->translation.x -= 0.5;
+	//  quadLeft->translation.x += 0.5;
+
+	  collider = new ColliderBox({2.0f, 2.0f, 2.0f});
 }
 
 Box::~Box()
@@ -34,6 +36,7 @@ Box::~Box()
 	delete   quadBack;
 	delete  quadRight;
 	delete   quadLeft;
+	delete collider;
 }
 
 void Box::Update()
@@ -45,6 +48,7 @@ void Box::Update()
 	  quadBack->Update();
 	 quadRight->Update();
 	  quadLeft->Update();
+	  collider->Update();
 }
 
 void Box::Render()
@@ -56,9 +60,11 @@ void Box::Render()
 	  quadBack->Render();
 	 quadRight->Render();
 	  quadLeft->Render();
+	  collider->Render();
 }
 
 void Box::PostRender()
 {
 	cube->Debug();
+	collider->Debug();
 }
