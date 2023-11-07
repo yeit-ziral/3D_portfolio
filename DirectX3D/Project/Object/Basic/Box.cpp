@@ -3,6 +3,7 @@
 
 Box::Box()
 {
+
 	cube = new Cube({ 1.0f, 0.0f, 0.0f, 1.0f });
 	quadTop = new Quad(cube->GetTopVertices());
 	quadBottom = new Quad(cube->GetBottomVertices());
@@ -18,14 +19,9 @@ Box::Box()
 	 quadRight->SetParent(cube);
 	  quadLeft->SetParent(cube);
 
-	//   quadTop->translation.y += 0.5;
-	//quadBottom->translation.y -= 0.5;
-	// quadFront->translation.z -= 0.5;
-	//  quadBack->translation.z += 0.5;
-	// quadRight->translation.x -= 0.5;
-	//  quadLeft->translation.x += 0.5;
+	  cube->SetParent(this);
 
-	  collider = new ColliderBox({2.0f, 2.0f, 2.0f});
+	  collider = new ColliderBox({ 2.0f, 2.0f, 2.0f });
 }
 
 Box::~Box()
@@ -36,6 +32,7 @@ Box::~Box()
 	delete   quadBack;
 	delete  quadRight;
 	delete   quadLeft;
+
 	delete collider;
 }
 
@@ -48,7 +45,9 @@ void Box::Update()
 	  quadBack->Update();
 	 quadRight->Update();
 	  quadLeft->Update();
+
 	  collider->Update();
+	  collider->translation = cube->GetGlobalPosition();
 }
 
 void Box::Render()
@@ -60,11 +59,28 @@ void Box::Render()
 	  quadBack->Render();
 	 quadRight->Render();
 	  quadLeft->Render();
+
 	  collider->Render();
 }
 
 void Box::PostRender()
 {
 	cube->Debug();
+
 	collider->Debug();
+}
+
+void Box::SetTranslation(Vector3 pos)
+{
+	cube->translation = pos;
+}
+
+void Box::SetQuadShader(wstring wstr)
+{
+	   quadTop->GetMaterial()->SetShader(wstr);
+	quadBottom->GetMaterial()->SetShader(wstr);
+	 quadFront->GetMaterial()->SetShader(wstr);
+	  quadBack->GetMaterial()->SetShader(wstr);
+	 quadRight->GetMaterial()->SetShader(wstr);
+	  quadLeft->GetMaterial()->SetShader(wstr);
 }

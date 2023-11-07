@@ -69,6 +69,5 @@ private:
 
     static int count;
 
-    ColliderBox* collider;
 };
 

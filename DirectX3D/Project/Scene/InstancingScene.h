@@ -29,6 +29,4 @@ private:
 	vector<InstanceData> instanceData;
 
 	VertexBuffer* instanceBuffer;
-
-	//vertex<Box*> boxs;
 };

@@ -15,8 +15,6 @@ Box2::Box2()
 	quad4->SetParent(quad1);
 	quad5->SetParent(quad1);
 	quad6->SetParent(quad1);
-
-	collider = new ColliderBox(this->GetGlobalPosition());
 }
 
 Box2::~Box2()

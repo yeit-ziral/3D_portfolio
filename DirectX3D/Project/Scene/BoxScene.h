@@ -14,10 +14,7 @@ public:
 	virtual void PostRender() override;
 
 private:
-	//vector<Box*> boxies;
-
-	Box* box1;
-
+	Box* box;
 	Box* box2;
 };
 

@@ -15,10 +15,10 @@ InstancingScene::InstancingScene()
 	//	}
 	//}
 
-	//quad = new Quad();
+	quad = new Quad();
 
-	//quad->GetMaterial()->SetDiffuseMap(L"Landscape/Box.png");
-	//quad->GetMaterial()->SetShader(L"06TextureInstancing");
+	quad->GetMaterial()->SetDiffuseMap(L"Landscape/Box.png");
+	quad->GetMaterial()->SetShader(L"06TextureInstancing");
 
 	instanceData.resize(COUNT * COUNT);
 
@@ -30,7 +30,7 @@ InstancingScene::InstancingScene()
 
 			instanceData[x + y * COUNT].transform = XMMatrixTranspose(transform);
 
-			instanceData[x + y * COUNT].color = Vector4(MyMath::Random(0.0f, 1.0f), MyMath::Random(0.0f, 1.0f), MyMath::Random(0.0f, 1.0f), 1);
+			//instanceData[x + y * COUNT].color = Vector4(MyMath::Random(0.0f, 1.0f), MyMath::Random(0.0f, 1.0f), MyMath::Random(0.0f, 1.0f), 1);
 		}
 	}
 
