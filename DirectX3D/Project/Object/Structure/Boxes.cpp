@@ -3,34 +3,41 @@
 
 Boxes::Boxes()
 {
-	boxes.resize(100);
+	boxes.resize(COUNT * COUNT);
 
-	for (int i = 0; i < 100; i++)
+	for (float z = 0; z < 10; z++)
 	{
-		Box* box = new Box();
+		for (float x = 0; x < 10; x++)
+		{
+			boxes[x + z] = new Crate();
 
-		box->SetQuadShader(L"06TextureInstancing");
-
-		boxes[i] = box;
+			boxes[x + z]->translation = { x * 10, 0, z * 10 };
+		}
 	}
-
-	instanceData.resize(600);
-
-	
 }
 
 Boxes::~Boxes()
 {
+	for (Crate* b : boxes)
+		delete b;
+
+	boxes.clear();
 }
 
 void Boxes::Update()
 {
+	for (Crate* b : boxes)
+		b->Update();
 }
 
 void Boxes::Render()
 {
+	for (Crate* b : boxes)
+		b->Render();
 }
 
 void Boxes::PostRender()
 {
+	for (Crate* b : boxes)
+		b->Debug();
 }

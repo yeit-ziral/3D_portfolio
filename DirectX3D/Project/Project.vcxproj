@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\Model\Crate.h" />
     <ClInclude Include="Object\Structure\Boxes.h" />
     <ClInclude Include="Scene\LightScene.h" />
     <ClInclude Include="Model\ModelAnimatorInstancing.h" />
@@ -233,6 +234,7 @@
     <ClInclude Include="__Others\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\Model\Crate.cpp" />
     <ClCompile Include="Object\Structure\Boxes.cpp" />
     <ClCompile Include="Scene\LightScene.cpp" />
     <ClCompile Include="Model\ModelAnimatorInstancing.cpp" />

@@ -175,6 +175,7 @@ using namespace MyMath;
 #include "Object/Model/Pumpkin.h"
 #include "Object/Model/Ghost.h"
 #include "Object/Model/Skeleton.h"
+#include "Object/Model/Crate.h"
 
 #include "Scene/Scene.h"
 #include "Scene/TutorialScene.h"

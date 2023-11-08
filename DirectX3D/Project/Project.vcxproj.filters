@@ -306,6 +306,9 @@
     <ClInclude Include="Object\Structure\Boxes.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\Model\Crate.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -552,6 +555,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\Structure\Boxes.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model\Crate.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

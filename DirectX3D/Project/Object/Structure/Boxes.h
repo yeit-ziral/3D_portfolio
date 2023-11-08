@@ -10,9 +10,9 @@ public:
 	void PostRender();
 
 private:
-	vector<Box*> boxes;
+	const UINT COUNT = 10;
 
-	vector<InstanceData> instanceData;
+	vector<Crate*> boxes;
 
-	VertexBuffer* instanceBuffer;
+	int instanceIndex = 0;
 };
