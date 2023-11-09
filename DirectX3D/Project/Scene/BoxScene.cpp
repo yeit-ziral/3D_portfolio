@@ -6,7 +6,6 @@ BoxScene::BoxScene()
 	box = new Crate();
 	box2 = new Crate();
 	box2->translation = { 2.0f, 0.0f, 0.0f };
-	box3 = new Crate();
 }
 
 BoxScene::~BoxScene()

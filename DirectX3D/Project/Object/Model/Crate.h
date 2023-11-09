@@ -1,5 +1,5 @@
 #pragma once
-class Crate : public ModelInstancing
+class Crate : public Transform
 {
 public:
 	Crate();
@@ -13,7 +13,6 @@ public:
 	void SetIsAppear(bool value) { isAppear = value; }
 
 private:
-	ModelReader* reader;
 	ColliderBox* collider;
 
 	bool isAppear = true;

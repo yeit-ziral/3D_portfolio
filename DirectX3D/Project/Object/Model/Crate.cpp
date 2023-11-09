@@ -2,16 +2,9 @@
 #include "Crate.h"
 
 Crate::Crate()
-	:ModelInstancing("Crate")
 {
-	reader = new ModelReader("Crate");
-	reader->GetMaterial()[0]->Load(L"Crate");
-
 	collider = new ColliderBox({3, 3, 3});
-
 	collider->SetParent(this);
-
-	ModelInstancing::Add();
 }
 
 Crate::~Crate()
@@ -24,21 +17,20 @@ void Crate::Update()
 	if (!isAppear)
 		return;
 
-	ModelInstancing::Update();
-
 	collider->Update();
-	collider->translation = Model::GetGlobalPosition();
+
+	collider->translation = this->translation;
 }
 
 void Crate::Render()
 {
 	if (!isAppear)
 		return;
-	ModelInstancing::Render();
+
 	collider->Render();
 }
 
 void Crate::Debug()
 {
-	ModelInstancing::Debug();
+	collider->Debug();
 }
