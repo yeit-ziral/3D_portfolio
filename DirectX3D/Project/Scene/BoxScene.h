@@ -16,6 +16,5 @@ public:
 private:
 	Crate* box;
 	Crate* box2;
-	Crate* box3;
 };
 

@@ -3,8 +3,8 @@
 
 Crate::Crate()
 {
-	collider = new ColliderBox({3, 3, 3});
-	collider->SetParent(this);
+	collider = new ColliderBox();
+	isAppear = true;
 }
 
 Crate::~Crate()
@@ -18,8 +18,7 @@ void Crate::Update()
 		return;
 
 	collider->Update();
-
-	collider->translation = this->translation;
+	collider->translation = translation;
 }
 
 void Crate::Render()
