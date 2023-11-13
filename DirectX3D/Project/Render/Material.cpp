@@ -88,6 +88,13 @@ void Material::SetDiffuseMap(wstring file)
 	buffer->data.hasDiffuseMap = true;
 }
 
+void Material::SetDiffuseMap(Texture* texture)
+{
+	diffuseMap = texture; // 가상으로만 존재해서 포인터 필요없음
+
+	buffer->data.hasDiffuseMap = true;
+}
+
 void Material::SetSpecularMap(wstring file)
 {
 	specularMap = Texture::Get(file);
@@ -119,6 +126,7 @@ void Material::Debug()
 		ImGui::ColorEdit4((label + "Diffuse").c_str(), (float*)&buffer->data.diffuse);
 		ImGui::ColorEdit4((label + "Specular").c_str(), (float*)&buffer->data.specular);
 		ImGui::ColorEdit4((label + "Ambient").c_str(), (float*)&buffer->data.ambient);
+		ImGui::ColorEdit4((label + "Emissive").c_str(), (float*)&buffer->data.emissive);
 
 		ImGui::Checkbox((label + "HasDiffuseMap").c_str(), (bool*)&buffer->data.hasDiffuseMap);
 		ImGui::Checkbox((label + "HasSpecularMap").c_str(), (bool*)&buffer->data.hasSpecularMap);

@@ -17,12 +17,14 @@ public:
 
 	void UpdateLeftHand();
 
+	Matrix GetHeadPosition(); // "mixamorig:Neck" 위치 받아 보내는 함수
+
 	void SetClip(AnimState state);
 
-private:
+protected:
 	void Move();
 
-private:
+protected:
 
 	float speed = 1.0f;
 	float takeTime = 0.2f;

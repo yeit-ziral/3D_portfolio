@@ -24,6 +24,8 @@ public:
 
 	void SetIsAppear(bool value) { isAppear = value; }
 
+	bool IsAppear() { return isAppear; }
+
 private:
 	ColliderSphere* collider;
 

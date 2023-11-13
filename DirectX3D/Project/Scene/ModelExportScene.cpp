@@ -3,7 +3,7 @@
 
 ModelExportScene::ModelExportScene()
 {
-	string name = "Explosion_S";
+	string name = "Ghost";
 
 	exporter = new ModelExporter(name);
 	

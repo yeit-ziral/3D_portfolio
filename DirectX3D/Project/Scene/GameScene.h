@@ -15,7 +15,5 @@ private:
 
 	Groot* groot;
 
-	Model* bunny;
-
 	Sphere* sphere;
 };

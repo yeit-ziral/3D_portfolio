@@ -134,7 +134,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Explosion.h" />
+    <ClInclude Include="Object\Character\Player.h" />
+    <ClInclude Include="Scene\DeferredRenderScene.h" />
+    <ClInclude Include="Scene\FrustumCullingScene.h" />
+    <ClInclude Include="Scene\GameScene.h" />
     <ClInclude Include="Object\Model\Crate.h" />
     <ClInclude Include="Object\Structure\Boxes.h" />
     <ClInclude Include="Scene\LightScene.h" />
@@ -235,7 +239,11 @@
     <ClInclude Include="__Others\targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="Object\Character\Player.cpp" />
+    <ClCompile Include="Scene\DeferredRenderScene.cpp" />
+    <ClCompile Include="Scene\FrustumCullingScene.cpp" />
+    <ClCompile Include="Scene\GameScene.cpp" />
     <ClCompile Include="Object\Model\Crate.cpp" />
     <ClCompile Include="Object\Structure\Boxes.cpp" />
     <ClCompile Include="Scene\LightScene.cpp" />
@@ -399,12 +407,7 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
     </FxCompile>
-    <FxCompile Include="_Shader\Pixel05Sky.hlsl">
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
-    </FxCompile>
+    <FxCompile Include="_Shader\Pixel05Sky.hlsl" />
     <FxCompile Include="_Shader\Pixel06TextureInstancing.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
@@ -429,6 +432,10 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
     </FxCompile>
+    <FxCompile Include="_Shader\Pixel10GrayScale.hlsl" />
+    <FxCompile Include="_Shader\Pixel11PostEffect.hlsl" />
+    <FxCompile Include="_Shader\Pixel12DeferredRender.hlsl" />
+    <FxCompile Include="_Shader\Pixel12GeometryBuffer.hlsl" />
     <FxCompile Include="_Shader\PixelColor.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
@@ -507,6 +514,10 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
     </FxCompile>
+    <FxCompile Include="_Shader\Vertex10GrayScale.hlsl" />
+    <FxCompile Include="_Shader\Vertex11PostEffect.hlsl" />
+    <FxCompile Include="_Shader\Vertex12DeferredRender.hlsl" />
+    <FxCompile Include="_Shader\Vertex12GeometryBuffer.hlsl" />
     <FxCompile Include="_Shader\VertexColor.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>

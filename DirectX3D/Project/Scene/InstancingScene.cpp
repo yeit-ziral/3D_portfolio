@@ -30,7 +30,7 @@ InstancingScene::InstancingScene()
 
 			instanceData[x + y * COUNT].transform = XMMatrixTranspose(transform);
 
-			//instanceData[x + y * COUNT].color = Vector4(MyMath::Random(0.0f, 1.0f), MyMath::Random(0.0f, 1.0f), MyMath::Random(0.0f, 1.0f), 1);
+			instanceData[x + y * COUNT].color = Vector4(MyMath::Random(0.0f, 1.0f), MyMath::Random(0.0f, 1.0f), MyMath::Random(0.0f, 1.0f), 1);
 		}
 	}
 

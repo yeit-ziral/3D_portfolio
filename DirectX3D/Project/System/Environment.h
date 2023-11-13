@@ -1,4 +1,7 @@
 #pragma once
+
+class Camera;
+
 class Environment : public Singleton<Environment>
 {
 	friend class Singleton;
@@ -6,13 +9,14 @@ private:
 	Environment();
 	~Environment();
 
-	void CreateViewport();
 	void CreatePerspective();
 	void CreateOrthographic();
 
 	void DebugLight(int lightIndex);
 
 public:
+	void SetViewport(UINT width = WIN_WIDTH, UINT height = WIN_HEIGHT);
+
 	void SetEnvironment();
 
 	void PostSet();
@@ -20,6 +24,10 @@ public:
 	void PostRender();
 
 	Matrix GetProjMatrix() { return persMatrix; } // 수정할 것이 아니라서 값복사로 넘김
+
+	MatrixBuffer* GetPerspectiveBuffer() { return persBuffer; }
+
+	Camera* GetMainCamera() { return mainCamera; }
 
 private:
 	MatrixBuffer* persBuffer;
@@ -31,5 +39,7 @@ private:
 	ViewBuffer* UIViewBuffer;
 
 	LightBuffer* lightBuffer;
+
+	Camera* mainCamera;
 };
 

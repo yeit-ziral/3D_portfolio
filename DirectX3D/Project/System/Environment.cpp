@@ -3,26 +3,30 @@
 
 Environment::Environment()
 {
-    CreateViewport();
+    SetViewport();
     CreatePerspective();
     CreateOrthographic();
 
     lightBuffer = new LightBuffer();
+
+    mainCamera = new Camera();
 }
 
 Environment::~Environment()
 {
     delete  persBuffer;
     delete lightBuffer;
+
+    delete mainCamera;
 }
 
-void Environment::CreateViewport() // 3D 절두체를 2D로 압축하면서 어떻게 표현할지 결정
+void Environment::SetViewport(UINT width, UINT height) // 3D 절두체를 2D로 압축하면서 어떻게 표현할지 결정
 {
     D3D11_VIEWPORT viewPort; // 우리가 띄워주는 화면 -> 여러개 띄울 수 있음(화면 분할 가능)
     viewPort.TopLeftX = 0.0f;
     viewPort.TopLeftY = 0.0f;
-    viewPort.Width    = WIN_WIDTH;
-    viewPort.Height     = WIN_HEIGHT;
+    viewPort.Width    = width;
+    viewPort.Height   = height;
     viewPort.MinDepth = 0.0f;
     viewPort.MaxDepth = 1.0f;
 
@@ -77,7 +81,7 @@ void Environment::DebugLight(int lightIndex)
 
         ImGui::SliderFloat("Range", &light.range, 1, 1000);
 
-        ImGui::SliderFloat("Inner", &light.inner, 1, 1000);
+        ImGui::SliderFloat("Inner", &light.inner, 1, light.outer);
         ImGui::SliderFloat("Outer", &light.outer, light.inner, 180.0f);
 
         ImGui::SliderFloat("Length", &light.length, 0, 500.0f);
@@ -88,6 +92,8 @@ void Environment::DebugLight(int lightIndex)
 
 void Environment::SetEnvironment()
 {
+    mainCamera->Update();
+
     lightBuffer->SetPSBuffer(0);
 
     persBuffer->SetVSBuffer(2);
@@ -120,4 +126,6 @@ void Environment::PostRender()
 
         ImGui::TreePop();
     }
+
+    mainCamera->Debug();
 }

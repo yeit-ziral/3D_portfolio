@@ -20,10 +20,10 @@ MainGame::MainGame()
 
 	SCENE->Create("Grid", new GridScene());
 	//SCENE->Create("Collision", new CollisionScene());
-	//SCENE->Create("ModelExport", new ModelExportScene());
-	//SCENE->Create("ModelAnimation", new ModelAnimationScene());
+	//SCENE->Create("ModelExport", new ModelExportScene);
+	//SCENE->Create("ModelAnimation", new ModelAnimationScene);
 	//SCENE->Create("Shooting", new ShootingScene);
-	SCENE->Create("Start", new BoxScene());
+	SCENE->Create("Start", new TerrainEditorScene());
 
 	SCENE->Add("Grid");
 	//SCENE->Add("Collision");
@@ -48,7 +48,6 @@ void MainGame::Update()
 
 	Time::GetInstance()->Update();
 	Keyboard::GetInstance()->Update();
-	Camera::GetInstance()->Update();
 }
 
 void MainGame::Render()
@@ -80,7 +79,6 @@ void MainGame::Render()
 
 	SCENE->PostRender();
 
-	Camera::GetInstance()->Debug();
 
 	Environment::GetInstance()->PostRender();
 
@@ -124,7 +122,6 @@ void MainGame::Release()
 	Shader::Delete();
 	Environment::Delete();
 	StateManager::Delete();
-	Camera::Delete();
 	Texture::Delete();
 	SceneManager::Delete();
 

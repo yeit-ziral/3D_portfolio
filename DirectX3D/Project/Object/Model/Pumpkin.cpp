@@ -25,21 +25,29 @@ void Pumpkin::Update()
 
 	collider->scale = scale * 130.0f;
 
-	if (speed > 0.0f)
-		speed -= (Time::Delta() * 0.1f);
+	//if (speed > 0.0f)
+	//	speed -= (Time::Delta() * 0.1f);
 
-	translation.y -= Time::Delta() * 0.5f;
-	translation += direction * speed * Time::Delta();
 
-	nowTime += Time::Delta();
+
+	if (isAppear)
+	{
+		nowTime += Time::Delta();
+
+		translation += direction * speed * Time::Delta();
+
+		direction.y -= 0.5f * Time::Delta();
+
+		if (nowTime > 4.0f)
+		{
+			nowTime = 0.0f;
+			translation = CAMERA->GetGlobalPosition();
+			isAppear = false;
+		}
+	}
 
 	//Appear();
 
-	if (KEY_DOWN(VK_LBUTTON))
-		Throw();
-
-	if (translation.z > 1000)
-		isAppear = false;
 }
 
 void Pumpkin::Render()
@@ -57,21 +65,12 @@ void Pumpkin::Debug()
 
 void Pumpkin::Throw()
 {
-	if (nowTime > 5.0f)
-	{
-		nowTime = 0.0f;
-		translation = CAMERA->GetGlobalPosition();
-		isAppear = false;
-	}
-	else
-	{
-		Ray ray = Camera::GetInstance()->ScreenPointToRay(mousePos);
+	Ray ray = CAMERA->ScreenPointToRay(mousePos);
 
-		direction = ray.direction.GetNormalized();
+	direction = ray.direction.GetNormalized();
 
-		isAppear = true;
-		speed = 700;
-	}
+	isAppear = true;
+	speed = 20;
 }
 
 //void Pumpkin::Appear()

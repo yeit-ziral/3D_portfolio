@@ -309,7 +309,19 @@
     <ClInclude Include="Object\Model\Crate.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="GameScene.h">
+    <ClInclude Include="Scene\GameScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Character\Player.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Explosion.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\DeferredRenderScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\FrustumCullingScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -563,7 +575,19 @@
     <ClCompile Include="Object\Model\Crate.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GameScene.cpp">
+    <ClCompile Include="Scene\GameScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Character\Player.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\DeferredRenderScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\FrustumCullingScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -675,7 +699,6 @@
     <FxCompile Include="_Shader\Vertex04ProgressBar.hlsl" />
     <FxCompile Include="_Shader\Pixel04ProgressBar.hlsl" />
     <FxCompile Include="_Shader\Vertex05Sky.hlsl" />
-    <FxCompile Include="_Shader\Pixel05Sky.hlsl" />
     <FxCompile Include="_Shader\Vertex06TextureInstancing.hlsl" />
     <FxCompile Include="_Shader\Pixel06TextureInstancing.hlsl" />
     <FxCompile Include="_Shader\Vertex07ModelInstancing.hlsl" />
@@ -684,6 +707,15 @@
     <FxCompile Include="_Shader\Pixel08ModelAnimatorInstancing.hlsl" />
     <FxCompile Include="_Shader\Vertex09Light.hlsl" />
     <FxCompile Include="_Shader\Pixel09Light.hlsl" />
+    <FxCompile Include="_Shader\Pixel10GrayScale.hlsl" />
+    <FxCompile Include="_Shader\Pixel11PostEffect.hlsl" />
+    <FxCompile Include="_Shader\Pixel12DeferredRender.hlsl" />
+    <FxCompile Include="_Shader\Pixel12GeometryBuffer.hlsl" />
+    <FxCompile Include="_Shader\Vertex10GrayScale.hlsl" />
+    <FxCompile Include="_Shader\Vertex11PostEffect.hlsl" />
+    <FxCompile Include="_Shader\Vertex12DeferredRender.hlsl" />
+    <FxCompile Include="_Shader\Vertex12GeometryBuffer.hlsl" />
+    <FxCompile Include="_Shader\Pixel05Sky.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini" />
