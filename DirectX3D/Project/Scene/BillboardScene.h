@@ -1,9 +1,9 @@
 #pragma once
-class GameScene : public Scene
+class BillboardScene : public Scene
 {
 public:
-	GameScene();
-	~GameScene();
+	BillboardScene();
+	~BillboardScene();
 
 	virtual void Update()		override;
 	virtual void PreRender()	override;
@@ -11,9 +11,7 @@ public:
 	virtual void PostRender()	override;
 
 private:
-	Quad* floor;
+	vector<Quad*> trees;
 
-	Groot* groot;
-
-	Sphere* sphere;
+	Terrain* terrain;
 };

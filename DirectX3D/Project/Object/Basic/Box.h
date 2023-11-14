@@ -9,11 +9,7 @@ public:
 	void Render();
 	void PostRender();
 
-	void SetTranslation(Vector3 pos);
-
-	Vector3 GetPos() { return cube->GetGlobalPosition(); }
-
-	void SetQuadShader(wstring wstr);
+	
 
 private:
 	Cube* cube;

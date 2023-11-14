@@ -182,7 +182,6 @@ using namespace MyMath;
 #include "Object/Model/Pumpkin.h"
 #include "Object/Model/Ghost.h"
 #include "Object/Model/Skeleton.h"
-#include "Object/Model/Crate.h"
 
 #include "Scene/Scene.h"
 #include "Scene/TutorialScene.h"
@@ -202,8 +201,7 @@ using namespace MyMath;
 #include "Scene/LightScene.h"
 #include "Scene/DeferredRenderScene.h"
 #include "Scene/FrustumCullingScene.h"
-
-#include "Scene/GameScene.h"
+#include "Scene/BillboardScene.h"
 
 #include "Scene/SceneManager.h"
 

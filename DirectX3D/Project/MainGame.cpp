@@ -22,8 +22,8 @@ MainGame::MainGame()
 	//SCENE->Create("Collision", new CollisionScene());
 	//SCENE->Create("ModelExport", new ModelExportScene);
 	//SCENE->Create("ModelAnimation", new ModelAnimationScene);
-	//SCENE->Create("Shooting", new ShootingScene);
-	SCENE->Create("Start", new TerrainEditorScene());
+	SCENE->Create("Shooting", new ShootingScene);
+	//SCENE->Create("Start", new BillboardScene());
 
 	SCENE->Add("Grid");
 	//SCENE->Add("Collision");

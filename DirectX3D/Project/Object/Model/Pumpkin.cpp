@@ -25,11 +25,6 @@ void Pumpkin::Update()
 
 	collider->scale = scale * 130.0f;
 
-	//if (speed > 0.0f)
-	//	speed -= (Time::Delta() * 0.1f);
-
-
-
 	if (isAppear)
 	{
 		nowTime += Time::Delta();
@@ -45,9 +40,6 @@ void Pumpkin::Update()
 			isAppear = false;
 		}
 	}
-
-	//Appear();
-
 }
 
 void Pumpkin::Render()
@@ -65,6 +57,7 @@ void Pumpkin::Debug()
 
 void Pumpkin::Throw()
 {
+	
 	Ray ray = CAMERA->ScreenPointToRay(mousePos);
 
 	direction = ray.direction.GetNormalized();

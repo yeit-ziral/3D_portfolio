@@ -13,7 +13,6 @@ public:
 
 private:
 	Pumpkin* pumpkin;
-	Pumpkin* pumpkin2;
 
 	Skeleton* skeleton;
 

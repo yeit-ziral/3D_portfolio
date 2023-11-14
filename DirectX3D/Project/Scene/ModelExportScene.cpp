@@ -30,7 +30,7 @@ ModelExportScene::ModelExportScene()
 	//model = new ModelA(name);
 
 	model = new Model(name);
-	model->scale *= 0.1;
+	model->scale *= 0.1f;
 	//model->scale *= 0.01;
 
 	//groot = new Groot();
