@@ -3,11 +3,11 @@
 
 ModelExportScene::ModelExportScene()
 {
-	string name = "Ghost";
+	string name = "Grenade";
 
-	exporter = new ModelExporter(name);
-	
-	exporter->ExportModel();
+	//exporter = new ModelExporter(name);
+	//
+	//exporter->ExportModel();
 	
 	//exporter->ExportClip("Happy Idle");
 	//exporter->ExportClip("Walking");
@@ -30,7 +30,7 @@ ModelExportScene::ModelExportScene()
 	//model = new ModelA(name);
 
 	model = new Model(name);
-	model->scale *= 0.1f;
+	model->scale *= 30.0f;
 	//model->scale *= 0.01;
 
 	//groot = new Groot();
@@ -39,11 +39,11 @@ ModelExportScene::ModelExportScene()
 
 ModelExportScene::~ModelExportScene()
 {
-	delete exporter;
+	//delete exporter;
 	delete model;
 
 	//delete groot;
-	delete modelAnimator;
+	//delete modelAnimator;
 }
 
 void ModelExportScene::Update()

@@ -5,7 +5,7 @@ Skeleton::Skeleton()
 	: Model("Skeleton")
 {
 	reader = new ModelReader("Skeleton");
-	reader->GetMaterial()[0]->Load(L"Skeleton.mat");
+	GetReader()->GetMaterial()[0]->Load(L"Skeleton.mat");
 
 	scale *= 2;
 

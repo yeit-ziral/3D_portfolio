@@ -2,12 +2,14 @@
 #include "Pumpkin.h"
 
 Pumpkin::Pumpkin()
-	:Model("Pumpkin")
+	:Model("Grenade")
 {
-	scale *= 0.005f;
+	scale *= 10.0f;
 
 	collider = new ColliderSphere();
 
+
+	GetReader()->GetMaterial()[0]->Load(L"Grenade.mat");
 }
 
 Pumpkin::~Pumpkin()
@@ -23,7 +25,7 @@ void Pumpkin::Update()
 	collider->translation = Model::GetGlobalPosition();
 	collider->translation += {0.0f, 0.4f, 0.0f};
 
-	collider->scale = scale * 130.0f;
+	collider->scale = scale * 0.3f;
 
 	if (isAppear)
 	{

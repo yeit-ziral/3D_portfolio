@@ -5,7 +5,7 @@ Ghost::Ghost()
 	:Model("Ghost")
 {
 	reader = new ModelReader("Ghost");
-	reader->GetMaterial()[0]->Load(L"Ghost.mat");
+	GetReader()->GetMaterial()[0]->Load(L"Ghost.mat");
 
 	rotation.y = 90.0f;
 

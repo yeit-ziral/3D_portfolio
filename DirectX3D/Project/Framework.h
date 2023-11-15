@@ -177,11 +177,13 @@ using namespace MyMath;
 #include "Model/ModelAnimatorInstancing.h"
 
 #include "Object/Model/Groot.h"
-#include "Object/Model/Zombie.h"
 #include "Object/Model/Knife_A.h"
 #include "Object/Model/Pumpkin.h"
 #include "Object/Model/Ghost.h"
 #include "Object/Model/Skeleton.h"
+#include "Object/Model/Bomb.h"
+
+#include "Object/Model/Zombie.h"
 
 #include "Scene/Scene.h"
 #include "Scene/TutorialScene.h"
@@ -202,6 +204,7 @@ using namespace MyMath;
 #include "Scene/DeferredRenderScene.h"
 #include "Scene/FrustumCullingScene.h"
 #include "Scene/BillboardScene.h"
+#include "Scene/Explosion.h"
 
 #include "Scene/SceneManager.h"
 
