@@ -134,7 +134,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Scene\Explosion.h" />
+    <ClInclude Include="Object\Model\Explosion.h" />
+    <ClInclude Include="Scene\ExplosionScene.h" />
     <ClInclude Include="Object\Model\Bomb.h" />
     <ClInclude Include="Scene\BillboardScene.h" />
     <ClInclude Include="Scene\FrustumCullingScene.h" />
@@ -240,7 +241,8 @@
     <ClInclude Include="__Others\targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Scene\Explosion.cpp" />
+    <ClCompile Include="Object\Model\Explosion.cpp" />
+    <ClCompile Include="Scene\ExplosionScene.cpp" />
     <ClCompile Include="Object\Model\Bomb.cpp" />
     <ClCompile Include="Scene\BillboardScene.cpp" />
     <ClCompile Include="Scene\FrustumCullingScene.cpp" />

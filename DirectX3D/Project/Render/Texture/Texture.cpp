@@ -14,7 +14,8 @@ Texture::Texture(ID3D11ShaderResourceView* srv, ScratchImage& image)
 Texture::~Texture()
 {
 	if (!isReferred) // 참조된 것은 RenderTarget에서 지워주기 때문
-		srv->Release();
+		if (srv != nullptr)
+			srv->Release();
 }
 
 Texture* Texture::Get(wstring file)

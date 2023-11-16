@@ -324,7 +324,10 @@
     <ClInclude Include="Object\Model\Bomb.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\Explosion.h">
+    <ClInclude Include="Scene\ExplosionScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Model\Explosion.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -593,7 +596,10 @@
     <ClCompile Include="Object\Model\Bomb.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\Explosion.cpp">
+    <ClCompile Include="Scene\ExplosionScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model\Explosion.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

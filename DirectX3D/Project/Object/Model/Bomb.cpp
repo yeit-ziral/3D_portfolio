@@ -6,23 +6,20 @@ Bomb::Bomb()
 {
 	GetReader()->GetMaterial()[0]->Load(L"Bomb.mat");
 
-	scale *= 10.0f;
+	scale *= 1.0f;
+
+	rotation.x += XM_PIDIV2;
 
 	collider = new ColliderSphere();
 
 	collider->SetParent(this);
 
-	explosion = new Model("Explosion_S");
-	explosion->rotation.z -= PI * 0.5f;
-	explosion->scale *= 0.0f;
-
-	expCol = new ColliderSphere();
+	exp = new Explosion();
 }
 
 Bomb::~Bomb()
 {
 	delete collider;
-	delete explosion;
 }
 
 void Bomb::Update()
@@ -31,9 +28,9 @@ void Bomb::Update()
 	collider->Update();
 
 	//collider->translation = Model::GetGlobalPosition();
-	collider->translation += {0.0f, 0.4f, 0.0f};
+	//collider->translation += {0.0f, 0.4f, 0.0f};
 
-	collider->scale = scale * 0.3f;
+	//collider->scale = scale * 0.3f;
 
 	if (isAppear)
 	{
@@ -43,44 +40,24 @@ void Bomb::Update()
 
 		direction.y -= 0.5f * Time::Delta();
 
-		if (nowTime > 4.0f)
+		if (nowTime > 3.0f)
 		{
 			nowTime = 0.0f;
+			exp->translation = this->GetGlobalPosition();
+			Explode();
 			translation = CAMERA->GetGlobalPosition();
+			speed = 0.0f;
 			isAppear = false;
 		}
-
-		if (this->GetGlobalPosition().y <= 0)
-		{
-			Explode();
-		}
 	}
 
-	if (isExplode)
-	{
-		explosion->Update();
-
-		float temp = Time::Delta() * 3;
-
-		explosion->scale += {temp, temp, temp};
-
-		expCol->translation = explosion->GetGlobalPosition();
-
-		expCol->scale = explosion->scale;
-
-		exTime += Time::Delta();
-
-		if (exTime > 2.0f)
-		{
-			exTime = 0.0f;
-
-			isExplode = false;
-		}
-	}
+	exp->Update();
 }
 
 void Bomb::Render()
 {
+	exp->Render();
+
 	if (!isAppear)
 		return;
 	Model::Render();
@@ -90,6 +67,8 @@ void Bomb::Render()
 void Bomb::Debug()
 {
 	Model::Debug();
+
+	exp->Debug();
 }
 
 void Bomb::Throw()
@@ -99,17 +78,16 @@ void Bomb::Throw()
 	direction = ray.direction.GetNormalized();
 
 	isAppear = true;
-	speed = 20;
+
+	//speed = 20.0f;
+}
+
+void Bomb::Charging()
+{
+	speed += Time::Delta() * 10;
 }
 
 void Bomb::Explode()
 {
-	if (this->GetGlobalPosition().y <= 0.0f)
-	{
-		isExplode = true;
-
-		isAppear = false;
-
-		explosion->translation = this->GetGlobalPosition();
-	}
+	exp->SetExplode(true);
 }

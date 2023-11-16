@@ -18,14 +18,20 @@ public:
 
 	bool IsAppear() { return isAppear; }
 
+	void Charging();
+
+	ColliderSphere* GetExpCollider() { return exp->GetCollider(); }
+
 	void Explode();
+
+
 
 private:
 	ColliderSphere* collider;
 
-	int speed = 0;
-
 	int time = 3;
+
+	float speed = 0;
 
 	float nowTime = 0;
 
@@ -33,11 +39,5 @@ private:
 
 	Vector3 direction;
 
-	Model* explosion;
-
-	bool isExplode = false;
-
-	ColliderSphere* expCol;
-
-	float exTime = 0;
+	Explosion* exp;
 };

@@ -1,9 +1,9 @@
 #pragma once
-class Explosion : public Scene
+class ExplosionScene : public Scene
 {
 public:
-	Explosion();
-	~Explosion();
+	ExplosionScene();
+	~ExplosionScene();
 
 	void Update();
 
@@ -13,9 +13,5 @@ public:
 
 private:
 	Bomb* bomb;
-
-	Model* exp;
-
-	ColliderSphere* collider;
 };
 
