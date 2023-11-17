@@ -13,7 +13,7 @@ public:
 private:
 	ModelExporter* exporter;
 
-	//vector<BodyPart*> bodyparts;
+	vector<BodyPart*> bodyparts;
 
 	ModelReader* reader;
 

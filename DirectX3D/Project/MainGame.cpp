@@ -20,10 +20,10 @@ MainGame::MainGame()
 
 	SCENE->Create("Grid", new GridScene());
 	//SCENE->Create("Collision", new CollisionScene());
-	//SCENE->Create("ModelExport", new ModelExportScene);
+	SCENE->Create("ModelExport", new ModelExportScene);
 	//SCENE->Create("ModelAnimation", new ModelAnimationScene);
 	//SCENE->Create("Shooting", new ShootingScene);
-	SCENE->Create("Start", new ExplosionScene());
+	//SCENE->Create("Start", new ExplosionScene());
 
 	SCENE->Add("Grid");
 	//SCENE->Add("Collision");

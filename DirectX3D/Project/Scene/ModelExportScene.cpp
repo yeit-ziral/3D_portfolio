@@ -3,28 +3,28 @@
 
 ModelExportScene::ModelExportScene()
 {
-	string name = "Grenade";
+	string name = "Demoman";
 
-	//exporter = new ModelExporter(name);
-	//
-	//exporter->ExportModel();
+	exporter = new ModelExporter(name);
 	
-	//exporter->ExportClip("Happy Idle");
-	//exporter->ExportClip("Walking");
-	//exporter->ExportClip("Throw");
+	exporter->ExportModel();
+	
+	exporter->ExportClip("Neutral Idle");
+	exporter->ExportClip("Running");
+	exporter->ExportClip("Throw");
 
 
-	//reader = new ModelReader(name);
-	//
-	//reader->SetShader(L"NormalMapping");
+	reader = new ModelReader(name);
+	
+	reader->SetShader(L"NormalMapping");
 	
 
-	//bodyparts.resize(reader->GetMeshes().size());
-	//
-	//for (UINT i = 0; i < reader->GetMeshes().size(); i++)
-	//{
-	//	bodyparts[i] = new BodyPart(reader->GetMaterials(), reader->GetMeshes()[i]);
-	//}
+	bodyparts.resize(reader->GetMeshes().size());
+	
+	for (UINT i = 0; i < reader->GetMeshes().size(); i++)
+	{
+		bodyparts[i] = new BodyPart(reader->GetMaterials(), reader->GetMeshes()[i]);
+	}
 
 
 	//model = new ModelA(name);
@@ -39,19 +39,19 @@ ModelExportScene::ModelExportScene()
 
 ModelExportScene::~ModelExportScene()
 {
-	//delete exporter;
+	delete exporter;
 	delete model;
 
 	//delete groot;
-	//delete modelAnimator;
+	delete modelAnimator;
 }
 
 void ModelExportScene::Update()
 {
-	//for (BodyPart* part : bodyparts)
-	//{
-	//	part->Update();
-	//}
+	for (BodyPart* part : bodyparts)
+	{
+		part->Update();
+	}
 
 	model->Update();
 
@@ -66,10 +66,10 @@ void ModelExportScene::PreRender()
 
 void ModelExportScene::Render()
 {
-	//for (int i = 0; i < reader->GetMeshes().size(); i++)
-	//{
-	//	bodyparts[i]->Render(i);
-	//}
+	for (int i = 0; i < reader->GetMeshes().size(); i++)
+	{
+		bodyparts[i]->Render(i);
+	}
 
 	model->Render();
 
