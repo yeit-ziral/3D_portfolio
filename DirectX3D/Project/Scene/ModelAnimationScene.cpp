@@ -12,12 +12,18 @@ ModelAnimationScene::ModelAnimationScene()
 
 	terrain->scale *= 2.5;
 
-	CAMERA->SetTarget(groot);
+	groot->translation = { 82.2f, 4.6f, 55.4f };
+
+	//CAMERA->SetTarget(groot);
 
 	crosshair = new Quad();
 	crosshair->GetMaterial()->SetDiffuseMap(L"UI/CrossHair.png");
 	crosshair->GetMaterial()->SetShader(L"Texture");
 	crosshair->scale = { 200, 200, 1 };
+
+	CAMERA->SetParent(groot);
+
+	CAMERA->translation.y += 700.0f;
 
 	sky = new SkyBox(L"Landscape/SpaceBox.dds");
 }

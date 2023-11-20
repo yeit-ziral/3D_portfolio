@@ -13,7 +13,10 @@ TerrainScene::TerrainScene()
 
 	//sphere = new Sphere();
 	zombie = new Zombie();
-	zombie->scale *= 0.1;
+	zombie->scale *= 0.01;
+
+	CAMERA->SetParent(zombie);
+	CAMERA->translation = { 0.0f, 1000.0f, 0.0f };
 }
 
 TerrainScene::~TerrainScene()
@@ -49,12 +52,12 @@ void TerrainScene::Update()
 	}
 	if (KEY_PRESS('S'))
 	{
-		zombie->translation.z -= Time::Delta() * 50;
+		zombie->rotation.y -= Time::Delta() * 50;
 		terrain->OnTheGround(&zombie->translation);
 	}
 	if (KEY_PRESS('A'))
 	{
-		zombie->translation.x += Time::Delta() * 50;
+		zombie->rotation.y += Time::Delta() * 50;
 	}
 	if (KEY_PRESS('D'))
 	{

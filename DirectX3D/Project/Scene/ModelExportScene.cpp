@@ -3,15 +3,15 @@
 
 ModelExportScene::ModelExportScene()
 {
-	string name = "Demoman";
+	string name = "Zombie";
 
 	exporter = new ModelExporter(name);
 	
 	exporter->ExportModel();
 	
-	exporter->ExportClip("Neutral Idle");
-	exporter->ExportClip("Running");
-	exporter->ExportClip("Throw");
+	//exporter->ExportClip("Neutral Idle");
+	//exporter->ExportClip("Running");
+	//exporter->ExportClip("Throw");
 
 
 	reader = new ModelReader(name);
