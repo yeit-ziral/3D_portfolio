@@ -3,28 +3,28 @@
 
 ModelExportScene::ModelExportScene()
 {
-	string name = "Zombie";
+	string name = "player robot 1";
 
 	exporter = new ModelExporter(name);
 	
 	exporter->ExportModel();
 	
-	//exporter->ExportClip("Neutral Idle");
+	//exporter->ExportClip("Breathing Idle");
 	//exporter->ExportClip("Running");
 	//exporter->ExportClip("Throw");
 
 
-	reader = new ModelReader(name);
-	
-	reader->SetShader(L"NormalMapping");
+	//reader = new ModelReader(name);
+	//
+	//reader->SetShader(L"02ModelAnimation");
 	
 
-	bodyparts.resize(reader->GetMeshes().size());
-	
-	for (UINT i = 0; i < reader->GetMeshes().size(); i++)
-	{
-		bodyparts[i] = new BodyPart(reader->GetMaterials(), reader->GetMeshes()[i]);
-	}
+	//bodyparts.resize(reader->GetMeshes().size());
+	//
+	//for (UINT i = 0; i < reader->GetMeshes().size(); i++)
+	//{
+	//	bodyparts[i] = new BodyPart(reader->GetMaterials(), reader->GetMeshes()[i]);
+	//}
 
 
 	//model = new ModelA(name);
@@ -43,15 +43,15 @@ ModelExportScene::~ModelExportScene()
 	delete model;
 
 	//delete groot;
-	delete modelAnimator;
+	//delete modelAnimator;
 }
 
 void ModelExportScene::Update()
 {
-	for (BodyPart* part : bodyparts)
-	{
-		part->Update();
-	}
+	//for (BodyPart* part : bodyparts)
+	//{
+	//	part->Update();
+	//}
 
 	model->Update();
 
@@ -66,10 +66,10 @@ void ModelExportScene::PreRender()
 
 void ModelExportScene::Render()
 {
-	for (int i = 0; i < reader->GetMeshes().size(); i++)
-	{
-		bodyparts[i]->Render(i);
-	}
+	//for (int i = 0; i < reader->GetMeshes().size(); i++)
+	//{
+	//	bodyparts[i]->Render(i);
+	//}
 
 	model->Render();
 

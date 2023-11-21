@@ -24,6 +24,7 @@ public:
 
 	Vector3 GetGlobalScale() { return globalScale; }
 	Vector3 GetGlobalPosition() { return globalPosition; }
+	Vector3 GetGlobalRotation() { return globalRotation; }
 
 	void Debug();
 

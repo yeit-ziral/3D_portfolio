@@ -21,11 +21,13 @@ ModelAnimationScene::ModelAnimationScene()
 	crosshair->GetMaterial()->SetShader(L"Texture");
 	crosshair->scale = { 200, 200, 1 };
 
-	CAMERA->SetParent(groot);
+	//CAMERA->SetParent(groot);
 
-	CAMERA->translation.y += 700.0f;
+	//CAMERA->translation.y += 700.0f;
 
 	sky = new SkyBox(L"Landscape/SpaceBox.dds");
+
+	CAMERA->rotation.y += XM_PI;
 }
 
 ModelAnimationScene::~ModelAnimationScene()
@@ -48,6 +50,20 @@ void ModelAnimationScene::Update()
 	terrain->Update();
 
 	groot->translation.y = terrain->GetHeight(groot->GetGlobalPosition());
+
+	CAMERA->translation = groot->GetGlobalPosition();
+	CAMERA->translation.y += 10;
+
+
+	if (KEY_PRESS('A'))
+	{
+		CAMERA->rotation.y -= 3.0f * Time::Delta();
+	}
+	if (KEY_PRESS('D'))
+	{
+		CAMERA->rotation.y += 3.0f * Time::Delta();
+	}
+
 
 	crosshair->translation.x = mousePos.x;
 	crosshair->translation.y = 2 * WIN_HEIGHT - mousePos.y;
