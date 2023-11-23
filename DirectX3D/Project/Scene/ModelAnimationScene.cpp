@@ -27,7 +27,7 @@ ModelAnimationScene::ModelAnimationScene()
 
 	sky = new SkyBox(L"Landscape/SpaceBox.dds");
 
-	CAMERA->rotation.y += XM_PI;
+	CAMERA->rotation.y = groot->Forward().y - XM_PI;
 }
 
 ModelAnimationScene::~ModelAnimationScene()

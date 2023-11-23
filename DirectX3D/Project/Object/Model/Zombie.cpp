@@ -10,10 +10,11 @@ Zombie::Zombie()
 	ReadClip("Walking");
 	CreateTexture();
 
-	reader->GetMaterial()[0]->Load(L"Zombie.mat");
+	reader->GetMaterial()[0]->SetDiffuseMap(L"Model/Zombie/creature_Base_color.png");
+	reader->GetMaterial()[0]->SetNormalMap(L"Model/Zombie/creature_Normal_OpenGL.png");
 
-	weapon = new Knife_A();
-	weapon->scale *= 100.0f;
+	weapon = new Bomb();
+	//weapon->scale *= 100.0f;
 
 	leftHand = new Transform();
 
@@ -78,5 +79,46 @@ void Zombie::SetClip(AnimState state)
 	{
 		PlayClip( state);
 		curState = state;
+	}
+}
+
+void Zombie::Move()
+{
+	if (!KEY_PRESS(VK_LBUTTON))
+	{
+		if (KEY_PRESS('W'))
+		{
+			//Ray ray = CAMERA->ScreenPointToRay({ WIN_WIDTH * 0.5f, WIN_HEIGHT * 0.5f, 0.0f });
+
+			//Vector2 dir = { ray.direction.x, ray.direction.z };
+			//
+			//float theta = -atan2f(dir.y, dir.x) * 2;
+
+			//rotation.y = theta + (PI * 1.304f);//CAMERA->GetRotY();
+			translation -= Forward() * moveSpeed * Time::Delta();
+			SetClip(RUN);
+		}
+
+		if (KEY_PRESS('S'))
+		{
+			translation -= Backward() * moveSpeed * Time::Delta();
+			SetClip(RUN);
+		}
+		if (KEY_UP('W') || KEY_UP('S'))
+			SetClip(IDLE);
+
+		if (KEY_PRESS('A'))
+		{
+			rotation.y -= rotSpeed * Time::Delta();
+		}
+		if (KEY_PRESS('D'))
+		{
+			rotation.y += rotSpeed * Time::Delta();
+		}
+
+		if (KEY_DOWN(VK_LBUTTON))
+		{
+			SetClip(ATTACK);
+		}
 	}
 }

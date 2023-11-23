@@ -13,7 +13,7 @@ TerrainScene::TerrainScene()
 
 	//sphere = new Sphere();
 	zombie = new Zombie();
-	zombie->scale *= 0.01;
+	zombie->scale *= 0.001;
 
 	CAMERA->SetParent(zombie);
 	CAMERA->translation = { 0.0f, 1000.0f, 0.0f };

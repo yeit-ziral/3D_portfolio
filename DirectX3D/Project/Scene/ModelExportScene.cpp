@@ -3,16 +3,16 @@
 
 ModelExportScene::ModelExportScene()
 {
-	string name = "player";
+	string name = "groot";
 
 	exporter = new ModelExporter(name);
+	//modelAnimator = new ModelAnimator(name);
 	
 	exporter->ExportModel();
 	
-	//exporter->ExportClip("Breathing Idle");
-	//exporter->ExportClip("Running");
+	//exporter->ExportClip("Sad Idle");
+	//exporter->ExportClip("Drunk Run Forward");
 	//exporter->ExportClip("Throw");
-
 
 	//reader = new ModelReader(name);
 	//
@@ -30,8 +30,8 @@ ModelExportScene::ModelExportScene()
 	//model = new ModelA(name);
 
 	model = new Model(name);
-	model->scale *= 30.0f;
-	//model->scale *= 0.01;
+	////model->scale *= 30.0f;
+	model->scale *= 0.01;
 
 	//groot = new Groot();
 	//pumpkin = new Ghost();
@@ -55,6 +55,8 @@ void ModelExportScene::Update()
 
 	model->Update();
 
+	//modelAnimator->Update();
+
 	//groot->Update();
 
 	//pumpkin->Update();
@@ -73,6 +75,8 @@ void ModelExportScene::Render()
 
 	model->Render();
 
+	//modelAnimator->Render();
+
 	//groot->Render();
 
 	//pumpkin->Render();
@@ -82,6 +86,8 @@ void ModelExportScene::PostRender()
 {
 	model->GetReader()->Debug();
 	model->Debug();
+
+	//modelAnimator->Debug();
 
 	//groot->Debug();
 

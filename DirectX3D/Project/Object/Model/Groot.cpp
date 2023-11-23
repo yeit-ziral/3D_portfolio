@@ -7,13 +7,13 @@ Groot::Groot()
 	scale *= 0.04f;
 	ReadClip("Sad Idle");
 	ReadClip("Drunk Run Forward");
-	ReadClip("Mutant Swiping");
+	ReadClip("Throw");
 	CreateTexture();
 
 	reader->GetMaterial()[0]->Load(L"Groot.mat");
 
-	weapon = new Model("Dwarven_Axe");
-	weapon->GetReader()->GetMaterial()[0]->Load(L"Dwarven_Axe.mat");
+	weapon = new Model("Bomb");
+	weapon->GetReader()->GetMaterial()[0]->Load(L"Bomb.mat");
 	//weapon->scale *= 100.0f;
 
 	leftHand = new Transform();

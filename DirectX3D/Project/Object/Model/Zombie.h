@@ -20,11 +20,21 @@ public:
 	void SetClip(AnimState state);
 
 private:
+	void Move();
+
+private:
 
 	float speed = 1.0f;
 	float takeTime = 0.2f;
 
-	class Knife_A* weapon;
+	//class Knife_A* weapon;
+	class Bomb* weapon;
+
 
 	Transform* leftHand;
+
+
+	float moveSpeed = 20.0f;
+
+	float rotSpeed = 3.0f;
 };
