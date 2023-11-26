@@ -1,9 +1,9 @@
 #pragma once
-class Bomb : public Model
+class Bomb2 : public Model
 {
 public:
-	Bomb();
-	~Bomb();
+	Bomb2();
+	~Bomb2();
 
 	void Update();
 	void Render();
@@ -27,7 +27,7 @@ public:
 private:
 	ColliderSphere* collider;
 
-	int time = 5;
+	int time = 3;
 
 	float speed = 5;
 

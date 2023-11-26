@@ -336,6 +336,12 @@
     <ClInclude Include="System\Refraction.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\Model\Bomb2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Model\Bomb3.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -612,6 +618,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="System\Refraction.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model\Bomb2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model\Bomb3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

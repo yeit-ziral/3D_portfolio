@@ -134,6 +134,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\Model\Bomb3.h" />
+    <ClInclude Include="Object\Model\Bomb2.h" />
     <ClInclude Include="Object\Model\Explosion.h" />
     <ClInclude Include="Object\Model\Player.h" />
     <ClInclude Include="System\Refraction.h" />
@@ -243,6 +245,8 @@
     <ClInclude Include="__Others\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\Model\Bomb3.cpp" />
+    <ClCompile Include="Object\Model\Bomb2.cpp" />
     <ClCompile Include="Object\Model\Explosion.cpp" />
     <ClCompile Include="Object\Model\Player.cpp" />
     <ClCompile Include="System\Refraction.cpp" />

@@ -1,8 +1,8 @@
 #include "Framework.h"
-#include "Bomb.h"
+#include "Bomb2.h"
 
-Bomb::Bomb()
-	:Model("Bomb")
+Bomb2::Bomb2()
+	:Model("Crate")
 {
 	GetReader()->GetMaterial()[0]->Load(L"Bomb.mat");
 
@@ -17,21 +17,16 @@ Bomb::Bomb()
 	exp = new Explosion();
 }
 
-Bomb::~Bomb()
+Bomb2::~Bomb2()
 {
 	delete collider;
 	delete exp;
 }
 
-void Bomb::Update()
+void Bomb2::Update()
 {
 	Model::Update();
 	collider->Update();
-
-	//collider->translation = Model::GetGlobalPosition();
-	//collider->translation += {0.0f, 0.4f, 0.0f};
-
-	//collider->scale = scale * 0.3f;
 
 	if (isAppear)
 	{
@@ -55,7 +50,7 @@ void Bomb::Update()
 	exp->Update();
 }
 
-void Bomb::Render()
+void Bomb2::Render()
 {
 	exp->Render();
 
@@ -65,24 +60,21 @@ void Bomb::Render()
 	collider->Render();
 }
 
-void Bomb::Debug()
+void Bomb2::Debug()
 {
 	Model::Debug();
 
 	exp->Debug();
 }
 
-void Bomb::Throw()
+void Bomb2::Throw()
 {
 	Ray ray = CAMERA->ScreenPointToRay(mousePos);
 
 	direction = ray.direction.GetNormalized();
-
-
-	//speed = 20.0f;
 }
 
-void Bomb::Charging()
+void Bomb2::Charging()
 {
 	if (speed < 20)
 		speed += Time::Delta() * 10;
@@ -90,7 +82,7 @@ void Bomb::Charging()
 	isAppear = true;
 }
 
-void Bomb::Explode()
+void Bomb2::Explode()
 {
 	exp->SetExplode(true);
 }

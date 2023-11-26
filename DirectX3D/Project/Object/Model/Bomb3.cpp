@@ -1,8 +1,8 @@
 #include "Framework.h"
-#include "Bomb.h"
+#include "Bomb3.h"
 
-Bomb::Bomb()
-	:Model("Bomb")
+Bomb3::Bomb3()
+	:Model("Grenade")
 {
 	GetReader()->GetMaterial()[0]->Load(L"Bomb.mat");
 
@@ -17,33 +17,25 @@ Bomb::Bomb()
 	exp = new Explosion();
 }
 
-Bomb::~Bomb()
+Bomb3::~Bomb3()
 {
 	delete collider;
 	delete exp;
 }
 
-void Bomb::Update()
+void Bomb3::Update()
 {
 	Model::Update();
 	collider->Update();
 
-	//collider->translation = Model::GetGlobalPosition();
-	//collider->translation += {0.0f, 0.4f, 0.0f};
-
-	//collider->scale = scale * 0.3f;
-
 	if (isAppear)
 	{
-		nowTime += Time::Delta();
-
 		translation += direction * speed * Time::Delta();
 
 		direction.y -= 0.5f * Time::Delta();
 
-		if (nowTime > 3.0f)
+		if (isCollision)
 		{
-			nowTime = 0.0f;
 			exp->translation = this->GetGlobalPosition();
 			Explode();
 			translation = CAMERA->GetGlobalPosition();
@@ -55,7 +47,7 @@ void Bomb::Update()
 	exp->Update();
 }
 
-void Bomb::Render()
+void Bomb3::Render()
 {
 	exp->Render();
 
@@ -65,24 +57,14 @@ void Bomb::Render()
 	collider->Render();
 }
 
-void Bomb::Debug()
+void Bomb3::Debug()
 {
 	Model::Debug();
 
 	exp->Debug();
 }
 
-void Bomb::Throw()
-{
-	Ray ray = CAMERA->ScreenPointToRay(mousePos);
-
-	direction = ray.direction.GetNormalized();
-
-
-	//speed = 20.0f;
-}
-
-void Bomb::Charging()
+void Bomb3::Throw()
 {
 	if (speed < 20)
 		speed += Time::Delta() * 10;
@@ -90,7 +72,7 @@ void Bomb::Charging()
 	isAppear = true;
 }
 
-void Bomb::Explode()
+void Bomb3::Explode()
 {
 	exp->SetExplode(true);
 }

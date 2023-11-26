@@ -3,12 +3,12 @@
 
 ModelExportScene::ModelExportScene()
 {
-	string name = "groot";
+	//string name = "groot";
 
-	exporter = new ModelExporter(name);
-	//modelAnimator = new ModelAnimator(name);
-	
-	exporter->ExportModel();
+	//exporter = new ModelExporter(name);
+	////modelAnimator = new ModelAnimator(name);
+	//
+	//exporter->ExportModel();
 	
 	//exporter->ExportClip("Sad Idle");
 	//exporter->ExportClip("Drunk Run Forward");
@@ -29,20 +29,20 @@ ModelExportScene::ModelExportScene()
 
 	//model = new ModelA(name);
 
-	model = new Model(name);
-	////model->scale *= 30.0f;
-	model->scale *= 0.01;
+	//model = new Model(name);
+	//////model->scale *= 30.0f;
+	//model->scale *= 0.01;
 
-	//groot = new Groot();
+	groot = new Groot();
 	//pumpkin = new Ghost();
 }
 
 ModelExportScene::~ModelExportScene()
 {
-	delete exporter;
-	delete model;
+	//delete exporter;
+	//delete model;
 
-	//delete groot;
+	delete groot;
 	//delete modelAnimator;
 }
 
@@ -53,11 +53,11 @@ void ModelExportScene::Update()
 	//	part->Update();
 	//}
 
-	model->Update();
+	//model->Update();
 
 	//modelAnimator->Update();
 
-	//groot->Update();
+	groot->Update();
 
 	//pumpkin->Update();
 }
@@ -73,23 +73,23 @@ void ModelExportScene::Render()
 	//	bodyparts[i]->Render(i);
 	//}
 
-	model->Render();
+	//model->Render();
 
 	//modelAnimator->Render();
 
-	//groot->Render();
+	groot->Render();
 
 	//pumpkin->Render();
 }
 
 void ModelExportScene::PostRender()
 {
-	model->GetReader()->Debug();
-	model->Debug();
+	//model->GetReader()->Debug();
+	//model->Debug();
 
 	//modelAnimator->Debug();
 
-	//groot->Debug();
+	groot->Debug();
 
 	//pumpkin->Debug();
 }

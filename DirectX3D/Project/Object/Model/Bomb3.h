@@ -1,9 +1,9 @@
 #pragma once
-class Bomb : public Model
+class Bomb3 : public Model
 {
 public:
-	Bomb();
-	~Bomb();
+	Bomb3();
+	~Bomb3();
 
 	void Update();
 	void Render();
@@ -18,24 +18,23 @@ public:
 
 	bool IsAppear() { return isAppear; }
 
-	void Charging();
-
 	ColliderSphere* GetExpCollider() { return exp->GetCollider(); }
 
 	void Explode();
 
+	bool IsCollision(ColliderBox* value) { return collider->Collision(value); }
+	bool IsCollision(ColliderSphere* value) { return collider->Collision(value); }
+
 private:
 	ColliderSphere* collider;
 
-	int time = 5;
-
-	float speed = 5;
-
-	float nowTime = 0;
+	float speed = 0;
 
 	bool isAppear = false;
 
 	Vector3 direction;
 
 	Explosion* exp;
+
+	bool isCollision = false;
 };

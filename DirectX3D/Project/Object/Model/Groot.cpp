@@ -33,6 +33,8 @@ Groot::Groot()
 	hpBar = new ProgressBar(L"UI/hp_bar.png", L"UI/hp_bar_BG.png");
 	hpBar->SetLabel("HP Bar");
 	hpBar->scale.x *= 0.5f;
+
+	weapon->scale *= 50.0f;
 }
 
 Groot::~Groot()
@@ -62,7 +64,8 @@ void Groot::Update()
 	hpBar->Update();
 	hpBar->translation = CAMERA->WorldToScreenPoint(this->globalPosition + V_UP);
 
-	UpdateLeftHand();
+	//UpdateLeftHand();
+	UpdateRightHand();
 
 	Move();
 }
@@ -102,6 +105,17 @@ void Groot::PostRender()
 void Groot::UpdateLeftHand()
 {
 	UINT nodeIndex = reader->GetNodeIndex("mixamorig:LeftHand");
+
+	Matrix nodeTransform = GetTransformByNode(nodeIndex); // 하나만 들어와서 instanceIndex에 0 넣어줌
+
+	leftHand->GetWorld() = nodeTransform * world;
+
+	weapon->Update();
+}
+
+void Groot::UpdateRightHand()
+{
+	UINT nodeIndex = reader->GetNodeIndex("mixamorig:RightHand");
 
 	Matrix nodeTransform = GetTransformByNode(nodeIndex); // 하나만 들어와서 instanceIndex에 0 넣어줌
 

@@ -183,6 +183,8 @@ using namespace MyMath;
 #include "Object/Model/Skeleton.h"
 #include "Object/Model/Explosion.h"
 #include "Object/Model/Bomb.h"
+#include "Object/Model/Bomb2.h"
+#include "Object/Model/Bomb3.h"
 
 #include "Object/Model/Zombie.h"
 
