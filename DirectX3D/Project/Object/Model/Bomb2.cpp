@@ -2,7 +2,7 @@
 #include "Bomb2.h"
 
 Bomb2::Bomb2()
-	:Model("Crate")
+	:Model("Dynamite")
 {
 	GetReader()->GetMaterial()[0]->Load(L"Bomb.mat");
 

@@ -12,6 +12,8 @@ public:
 	void PostRender();
 
 private:
-	Bomb* bomb;
+	Bomb3* bomb;
+
+	ColliderBox* box;
 };
 

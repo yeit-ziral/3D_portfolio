@@ -22,8 +22,10 @@ public:
 
 	void Explode();
 
-	bool IsCollision(ColliderBox* value) { return collider->Collision(value); }
-	bool IsCollision(ColliderSphere* value) { return collider->Collision(value); }
+	bool IsCollisionBox(ColliderBox* value) { return collider->Collision(value); }
+	bool IsCollisionSphere(ColliderSphere* value) { return collider->Collision(value); }
+
+	void SetCollision(bool value) { isCollision = value; }
 
 private:
 	ColliderSphere* collider;

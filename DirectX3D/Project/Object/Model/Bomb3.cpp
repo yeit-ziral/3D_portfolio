@@ -32,7 +32,7 @@ void Bomb3::Update()
 	{
 		translation += direction * speed * Time::Delta();
 
-		direction.y -= 0.5f * Time::Delta();
+		direction.y -= 20.0f * Time::Delta();
 
 		if (isCollision)
 		{
