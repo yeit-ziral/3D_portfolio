@@ -27,6 +27,8 @@ public:
 
 	void SetCollision(bool value) { isCollision = value; }
 
+	void Charging();
+
 private:
 	ColliderSphere* collider;
 
@@ -39,4 +41,6 @@ private:
 	Explosion* exp;
 
 	bool isCollision = false;
+
+	bool isExist = false;
 };

@@ -33,22 +33,26 @@ void Bomb::Update()
 
 	//collider->scale = scale * 0.3f;
 
-	if (isAppear)
+	if (isExist)
 	{
 		nowTime += Time::Delta();
 
-		translation += direction * speed * Time::Delta();
-
-		direction.y -= 0.5f * Time::Delta();
-
-		if (nowTime > 3.0f)
+		if (isAppear)
 		{
-			nowTime = 0.0f;
-			exp->translation = this->GetGlobalPosition();
-			Explode();
-			translation = CAMERA->GetGlobalPosition();
-			speed = 0.0f;
-			isAppear = false;
+			translation += direction * speed * Time::Delta();
+
+			direction.y -= 0.5f * Time::Delta();
+
+			if (nowTime > 3.0f)
+			{
+				nowTime = 0.0f;
+				exp->translation = this->GetGlobalPosition();
+				Explode();
+				translation = CAMERA->GetGlobalPosition();
+				speed = 0.0f;
+				isAppear = false;
+				isExist = false;
+			}
 		}
 	}
 
@@ -78,16 +82,17 @@ void Bomb::Throw()
 
 	direction = ray.direction.GetNormalized();
 
+	isAppear = true;
 
 	//speed = 20.0f;
 }
 
 void Bomb::Charging()
 {
-	if (speed < 20)
-		speed += Time::Delta() * 10;
+	if (speed < 1000)
+		speed += Time::Delta() * 50;
 
-	isAppear = true;
+	isExist = true;
 }
 
 void Bomb::Explode()

@@ -24,6 +24,8 @@ public:
 
 	void Explode();
 
+	void SetCollision(bool value) { isCollision = value; }
+
 private:
 	ColliderSphere* collider;
 
@@ -38,4 +40,8 @@ private:
 	Vector3 direction;
 
 	Explosion* exp;
+
+	bool isCollision = false;
+
+	bool isExist = false;
 };

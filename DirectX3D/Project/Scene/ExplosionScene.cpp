@@ -3,34 +3,42 @@
 
 ExplosionScene::ExplosionScene()
 {
-	bomb = new Bomb3();
+	//bomb = new Bomb3();
 
-	box = new ColliderBox(Vector3(3,3,3));
+	//box = new ColliderBox(Vector3(3,3,3));
 
-	box->translation.y -= 5;
+	//box->translation.y -= 10;
+
+	groot = new Groot();
+	groot->scale *= 0.1f;
 }
 
 ExplosionScene::~ExplosionScene()
 {
-	delete bomb;
+	//delete bomb;
+	//delete box;
+
+	delete groot;
 }
 
 void ExplosionScene::Update()
 {
-	bomb->Update();
+	//bomb->Update();
 
-	if (KEY_PRESS(VK_LBUTTON))
-	{
-		//bomb->Charging();
-	}
+	//if (KEY_PRESS(VK_LBUTTON))
+	//{
+	//	bomb->Charging();
+	//}
 
-	else if (KEY_UP(VK_LBUTTON) && !bomb->IsAppear())
-		bomb->Throw();
+	//else if (KEY_UP(VK_LBUTTON) && !bomb->IsAppear())
+	//	bomb->Throw();
 
-	if (bomb->IsCollisionBox(box))
-		bomb->SetCollision(true);
+	//if (box->Collision(bomb->GetCollider()))
+	//	bomb->SetCollision(true);
 
-	box->Update();
+	//box->Update();
+
+	groot->Update();
 }
 
 void ExplosionScene::PreRender()
@@ -39,12 +47,16 @@ void ExplosionScene::PreRender()
 
 void ExplosionScene::Render()
 {
-	bomb->Render();
+	//bomb->Render();
 
-	box->Render();
+	//box->Render();
+
+	groot->Render();
 }
 
 void ExplosionScene::PostRender()
 {
-	bomb->Debug();
+	//bomb->Debug();
+
+	groot->Debug();
 }

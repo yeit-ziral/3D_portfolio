@@ -35,6 +35,8 @@ Groot::Groot()
 	hpBar->scale.x *= 0.5f;
 
 	weapon->scale *= 50.0f;
+
+	bomb = new Bomb();
 }
 
 Groot::~Groot()
@@ -43,6 +45,8 @@ Groot::~Groot()
 	delete leftHand;
 
 	delete hpBar;
+
+	delete bomb;
 }
 
 void Groot::Update()
@@ -68,12 +72,15 @@ void Groot::Update()
 	UpdateRightHand();
 
 	Move();
+
+	bomb->Update();
 }
 
 void Groot::Render()
 {
 	ModelAnimator::Render();
 	weapon->Render();
+	bomb->Render();
 }
 
 void Groot::Debug()
@@ -94,6 +101,10 @@ void Groot::Debug()
 	hpBar->SetValue(value);
 
 	ImGui::SliderFloat("HP", &value, 0.0f, 1.0f);
+
+	ImGui::SliderInt("BombState", &curBomb, 0, 2);
+
+	bomb->Debug();
 }
 
 void Groot::PostRender()

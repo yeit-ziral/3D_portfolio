@@ -28,19 +28,22 @@ void Bomb3::Update()
 	Model::Update();
 	collider->Update();
 
-	if (isAppear)
+	if (isExist)
 	{
-		translation += direction * speed * Time::Delta();
-
-		direction.y -= 20.0f * Time::Delta();
-
-		if (isCollision)
+		if (isAppear)
 		{
-			exp->translation = this->GetGlobalPosition();
-			Explode();
-			translation = CAMERA->GetGlobalPosition();
-			speed = 0.0f;
-			isAppear = false;
+			translation += direction * speed * Time::Delta();
+
+			direction.y -= 20.0f * Time::Delta();
+
+			if (isCollision)
+			{
+				exp->translation = this->GetGlobalPosition();
+				Explode();
+				translation = CAMERA->GetGlobalPosition();
+				speed = 0.0f;
+				isAppear = false;
+			}
 		}
 	}
 
@@ -66,8 +69,9 @@ void Bomb3::Debug()
 
 void Bomb3::Throw()
 {
-	if (speed < 20)
-		speed += Time::Delta() * 10;
+	Ray ray = CAMERA->ScreenPointToRay(mousePos);
+
+	direction = ray.direction.GetNormalized();
 
 	isAppear = true;
 }
@@ -75,4 +79,12 @@ void Bomb3::Throw()
 void Bomb3::Explode()
 {
 	exp->SetExplode(true);
+}
+
+void Bomb3::Charging()
+{
+	if (speed < 1000)
+		speed += Time::Delta() * 50;
+
+	isExist = true;
 }
