@@ -18,6 +18,7 @@ public:
 
 	void UpdateLeftHand();
 	void UpdateRightHand();
+	void UpdateNeck();
 
 	void SetClip(AnimState state);
 

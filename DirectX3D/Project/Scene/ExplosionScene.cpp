@@ -11,8 +11,6 @@ ExplosionScene::ExplosionScene()
 
 	groot = new Groot();
 	groot->scale *= 0.1f;
-
-	CAMERA->SetParent(groot);
 }
 
 ExplosionScene::~ExplosionScene()
@@ -41,6 +39,10 @@ void ExplosionScene::Update()
 	//box->Update();
 
 	groot->Update();
+	CAMERA->translation = groot->GetGlobalPosition();
+	CAMERA->translation.y += 3.0f;
+	CAMERA->translation.z -= 1.0f;
+	CAMERA->rotation.y = groot->rotation.y + XM_PI;
 }
 
 void ExplosionScene::PreRender()

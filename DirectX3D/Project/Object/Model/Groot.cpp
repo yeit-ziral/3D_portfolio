@@ -74,6 +74,14 @@ void Groot::Update()
 	Move();
 
 	bomb->Update();
+
+	if (KEY_PRESS(VK_LBUTTON))
+	{
+		bomb->Charging();
+	}
+
+	else if (KEY_UP(VK_LBUTTON) && !bomb->IsAppear())
+		bomb->Throw();
 }
 
 void Groot::Render()
@@ -133,6 +141,10 @@ void Groot::UpdateRightHand()
 	leftHand->GetWorld() = nodeTransform * world;
 
 	weapon->Update();
+}
+
+void Groot::UpdateNeck()
+{
 }
 
 void Groot::SetClip(AnimState state)
