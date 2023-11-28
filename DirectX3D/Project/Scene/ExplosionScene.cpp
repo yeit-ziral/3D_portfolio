@@ -11,6 +11,8 @@ ExplosionScene::ExplosionScene()
 
 	groot = new Groot();
 	groot->scale *= 0.1f;
+
+	CAMERA->SetParent(groot);
 }
 
 ExplosionScene::~ExplosionScene()
