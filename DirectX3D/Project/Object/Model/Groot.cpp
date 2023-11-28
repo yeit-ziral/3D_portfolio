@@ -36,7 +36,9 @@ Groot::Groot()
 
 	weapon->scale *= 50.0f;
 
-	bomb = new Bomb();
+	bomb  = new Bomb();
+	bomb2 = new Bomb2();
+	bomb3 = new Bomb3();
 }
 
 Groot::~Groot()
@@ -46,7 +48,9 @@ Groot::~Groot()
 
 	delete hpBar;
 
-	delete bomb;
+	delete bomb ;
+	delete bomb2;
+	delete bomb3;
 }
 
 void Groot::Update()
@@ -56,14 +60,21 @@ void Groot::Update()
 
 	//leftHand->Update();
 
+	//if (KEY_DOWN('1'))
+	//	PlayClip( 0, speed, takeTime);
+
+	//if (KEY_DOWN('2'))
+	//	PlayClip( 1, speed, takeTime);
+
+	//if (KEY_DOWN('3'))
+	//	PlayClip( 2, speed, takeTime);
+
 	if (KEY_DOWN('1'))
-		PlayClip( 0, speed, takeTime);
-
+		curBomb = 0;
 	if (KEY_DOWN('2'))
-		PlayClip( 1, speed, takeTime);
-
+		curBomb = 1;
 	if (KEY_DOWN('3'))
-		PlayClip( 2, speed, takeTime);
+		curBomb = 2;
 
 	hpBar->Update();
 	hpBar->translation = CAMERA->WorldToScreenPoint(this->globalPosition + V_UP);
@@ -73,15 +84,11 @@ void Groot::Update()
 
 	Move();
 
-	bomb->Update();
+	bomb ->Update();
+	bomb2->Update();
+	bomb3->Update();
 
-	if (KEY_PRESS(VK_LBUTTON))
-	{
-		bomb->Charging();
-	}
-
-	else if (KEY_UP(VK_LBUTTON) && !bomb->IsAppear())
-		bomb->Throw();
+	Throw();
 }
 
 void Groot::Render()
@@ -89,6 +96,8 @@ void Groot::Render()
 	ModelAnimator::Render();
 	weapon->Render();
 	bomb->Render();
+	bomb2->Render();
+	bomb3->Render();
 }
 
 void Groot::Debug()
@@ -194,5 +203,41 @@ void Groot::Move()
 		{
 			SetClip(ATTACK);
 		}
+	}
+}
+
+void Groot::Throw()
+{
+	if (curBomb == 0)
+	{
+		if (KEY_PRESS(VK_LBUTTON))
+		{
+			bomb->Charging();
+		}
+
+		else if (KEY_UP(VK_LBUTTON) && !bomb->IsAppear())
+			bomb->Throw();
+	}
+
+	if (curBomb == 1)
+	{
+		if (KEY_PRESS(VK_LBUTTON))
+		{
+			bomb2->Charging();
+		}
+
+		else if (KEY_UP(VK_LBUTTON) && !bomb2->IsAppear())
+			bomb2->Throw();
+	}
+
+	if (curBomb == 2)
+	{
+		if (KEY_PRESS(VK_LBUTTON))
+		{
+			bomb3->Charging();
+		}
+
+		else if (KEY_UP(VK_LBUTTON) && !bomb3->IsAppear())
+			bomb3->Throw();
 	}
 }

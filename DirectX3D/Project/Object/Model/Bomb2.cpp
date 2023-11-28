@@ -6,7 +6,7 @@ Bomb2::Bomb2()
 {
 	GetReader()->GetMaterial()[0]->Load(L"Bomb.mat");
 
-	scale *= 1.0f;
+	scale *= 0.1f;
 
 	rotation.x += XM_PIDIV2;
 
@@ -82,8 +82,8 @@ void Bomb2::Throw()
 
 void Bomb2::Charging()
 {
-	if (speed < 100)
-		speed += Time::Delta() * 10;
+	if (speed < 1000)
+		speed += Time::Delta() * 50;
 
 	isExist = true;
 }

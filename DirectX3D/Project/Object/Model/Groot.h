@@ -25,6 +25,8 @@ public:
 private:
 	void Move();
 
+	void Throw();
+
 private:
 
 	float speed = 1.0f;
