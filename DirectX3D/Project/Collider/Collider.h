@@ -36,6 +36,10 @@ public:
 	virtual bool Collision(class ColliderSphere*  other) = 0;
 	virtual bool Collision(class ColliderCapsule* other) = 0;
 
+	bool Block(Collider* other);
+	virtual bool Block(class ColliderBox* other) abstract;
+	virtual bool Block(class ColliderSphere* other) abstract;
+
 	virtual void CreateMesh() = 0;
 
 	void Render();

@@ -51,3 +51,23 @@ void Collider::Render()
 
 	DC->DrawIndexed(indices.size(), 0, 0);
 }
+
+bool Collider::Block(Collider* other)
+{
+	switch (other->type)
+	{
+	case Collider::Type::BOX:
+	{
+		auto box = dynamic_cast<ColliderBox*>(other);
+		return Block(box);
+	}
+	case Collider::Type::SPHERE:
+	{
+		auto rect = dynamic_cast<ColliderSphere*>(other);;
+		return Block(rect);
+	}
+	default:
+		return false;
+	}
+}
+}
