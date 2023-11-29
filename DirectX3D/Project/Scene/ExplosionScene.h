@@ -17,7 +17,5 @@ private:
 	//ColliderBox* box;
 
 	Groot* groot;
-
-	Crate* 
 };
 

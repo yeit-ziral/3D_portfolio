@@ -19,6 +19,9 @@ public:
 	virtual bool Collision(class ColliderSphere* other) override;
 	virtual bool Collision(class ColliderCapsule* other) override;
 
+	virtual bool Block(class ColliderBox* other) override;
+	virtual bool Block(class ColliderSphere* other) override;
+
 	Obb GetOBB();
 
 	bool SeparatedAxis(Vector3 D, Vector3 axis, Obb box1, Obb box2);

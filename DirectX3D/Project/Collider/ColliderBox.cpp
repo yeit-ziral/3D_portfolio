@@ -157,6 +157,56 @@ bool ColliderBox::Collision(ColliderCapsule* other)
 	return distance <= other->Radius();
 }
 
+bool ColliderBox::Block(ColliderBox* other)
+{
+	if (!Collision(other))
+		return false;
+
+	Vector3 dir = other->GetGlobalPosition() - this->GetGlobalPosition();
+	Vector3 sum = other->GetGlobalScale() * 0.5f + GetGlobalScale() * 0.5f;
+	Vector3 overlap = Vector3(sum.x - abs(dir.x), sum.y - abs(dir.y), sum.z - abs(dir.z));
+
+	Vector3 fixedPos = other->translation;
+
+	dir.Normalize();
+	if (overlap.y > overlap.x && overlap.z > overlap.x)
+	{
+		if (dir.x < 0.0f)
+			dir.x = -1.0f;
+		else if (dir.x > 0.0f)
+			dir.x = 1.0f;
+
+		fixedPos.x += dir.x * overlap.x;
+	}
+	else if (overlap.x > overlap.y && overlap.z > overlap.y)
+	{
+		if (dir.y < 0.0f)
+			dir.y = -1.0f;
+		else if (dir.y > 0.0f)
+			dir.y = 1.0f;
+
+		fixedPos.y += dir.y * overlap.y;
+	}
+	else if (overlap.x > overlap.z && overlap.y > overlap.z)
+	{
+		if (dir.z < 0.0f)
+			dir.z = -1.0f;
+		else if (dir.z > 0.0f)
+			dir.z = 1.0f;
+
+		fixedPos.z += dir.z * overlap.z;
+	}
+
+	other->translation = fixedPos;
+
+	return true;
+}
+
+bool ColliderBox::Block(ColliderSphere* other)
+{
+	return false;
+}
+
 ColliderBox::Obb ColliderBox::GetOBB()
 {
 	Obb obb;

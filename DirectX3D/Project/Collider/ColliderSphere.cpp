@@ -68,6 +68,16 @@ bool ColliderSphere::Collision(ColliderCapsule* other)
 	return false;
 }
 
+bool ColliderSphere::Block(ColliderBox* other)
+{
+    return false;
+}
+
+bool ColliderSphere::Block(ColliderSphere* other)
+{
+    return false;
+}
+
 void ColliderSphere::CreateMesh()
 {
     for (int i = 0; i < stackCount + 1; i++)

@@ -12,6 +12,9 @@ public:
 
 	float Radius() { return radius * Max(globalScale.x, globalScale.y, globalScale.z); }
 
+	virtual bool Block(class ColliderBox* other) override;
+	virtual bool Block(class ColliderSphere* other) override;
+
 private:
 	virtual void CreateMesh();
 
