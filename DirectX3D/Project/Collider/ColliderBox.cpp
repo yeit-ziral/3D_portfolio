@@ -166,7 +166,7 @@ bool ColliderBox::Block(ColliderBox* other)
 	Vector3 sum = other->GetGlobalScale() * 0.5f + GetGlobalScale() * 0.5f;
 	Vector3 overlap = Vector3(sum.x - abs(dir.x), sum.y - abs(dir.y), sum.z - abs(dir.z));
 
-	Vector3 fixedPos = other->translation;
+	Vector3 fixedPos = other->GetGlobalPosition();
 
 	dir.Normalize();
 	if (overlap.y > overlap.x && overlap.z > overlap.x)
@@ -204,7 +204,42 @@ bool ColliderBox::Block(ColliderBox* other)
 
 bool ColliderBox::Block(ColliderSphere* other)
 {
-	return false;
+	if (!Collision(other))
+		return false;
+
+	Vector3 virtualHalfSize = other->GetGlobalScale();
+	Vector3 dir = other->GetGlobalPosition() - other->GetGlobalPosition();
+	Vector3 sum = virtualHalfSize + GetGlobalScale() * 0.5f;
+	Vector3 overlap = Vector3(sum.x - abs(dir.x), sum.y - abs(dir.y), sum.z - abs(dir.z));
+
+	Vector3 fixedPos = other->GetGlobalPosition();
+
+	dir.Normalize();
+	if (overlap.x > overlap.y)
+	{
+		if (dir.y < 0.0f)
+			dir.y = -1.0f;
+		else if (dir.y > 0.0f)
+			dir.y = 1.0f;
+
+		_sideCollision = false;
+		fixedPos.y += dir.y * overlap.y;
+	}
+	else
+	{
+		if (dir.x < 0.0f)
+			dir.x = -1.0f;
+		else if (dir.x > 0.0f)
+			dir.x = 1.0f;
+
+		_sideCollision = true;
+
+		fixedPos.x += dir.x * overlap.x;
+	}
+
+	movable->GetTransform()->SetPosition(fixedPos);
+
+	return true;
 }
 
 ColliderBox::Obb ColliderBox::GetOBB()
