@@ -312,6 +312,9 @@
     <ClInclude Include="Object\Model\Bomb.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Scene\BlockScene.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -564,6 +567,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\Model\Bomb.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\BlockScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

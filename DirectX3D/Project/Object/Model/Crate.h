@@ -27,5 +27,5 @@ private:
 
 	float nowTime = 0.0f;
 
-	bool isAppear = false;
+	bool isAppear = true;
 };

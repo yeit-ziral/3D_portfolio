@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Scene\BlockScene.h" />
     <ClInclude Include="Object\Model\Bomb.h" />
     <ClInclude Include="Object\Model\Bomb2.h" />
     <ClInclude Include="Object\Model\Bomb3.h" />
@@ -235,6 +236,7 @@
     <ClInclude Include="__Others\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Scene\BlockScene.cpp" />
     <ClCompile Include="Object\Model\Bomb.cpp" />
     <ClCompile Include="Object\Model\Bomb2.cpp" />
     <ClCompile Include="Object\Model\Bomb3.cpp" />

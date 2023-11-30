@@ -15,6 +15,8 @@ public:
 
 	void SetParent(Transform* parent) { this->parent = parent; }
 
+	Transform* GetParent() { return this->parent; }
+
 	Vector3	 Forward() { return forward; }
 	Vector3 Backward() { return forward * -1; }
 	Vector3    Right() { return right; }

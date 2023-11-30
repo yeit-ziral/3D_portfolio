@@ -185,6 +185,7 @@ using namespace MyMath;
 #include "Object/Model/Bomb.h"
 #include "Object/Model/Bomb2.h"
 #include "Object/Model/Bomb3.h"
+#include "Object/Model/Crate.h"
 
 #include "Object/Model/Zombie.h"
 
@@ -197,6 +198,7 @@ using namespace MyMath;
 #include "Scene/GridScene.h"
 #include "Scene/ShootingScene.h"
 #include "Scene/ExplosionScene.h"
+#include "Scene/BlockScene.h"
 
 #include "Scene/SceneManager.h"
 

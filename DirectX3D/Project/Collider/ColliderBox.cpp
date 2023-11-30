@@ -197,7 +197,7 @@ bool ColliderBox::Block(ColliderBox* other)
 		fixedPos.z += dir.z * overlap.z;
 	}
 
-	other->translation = fixedPos;
+	other->GetParent()->translation = fixedPos;
 
 	return true;
 }
@@ -237,7 +237,7 @@ bool ColliderBox::Block(ColliderSphere* other)
 		fixedPos.x += dir.x * overlap.x;
 	}
 
-	other->translation = fixedPos;
+	other->GetParent()->translation = fixedPos;
 
 	return true;
 }
