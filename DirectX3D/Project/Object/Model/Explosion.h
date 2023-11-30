@@ -14,7 +14,7 @@ public:
 	void SetExplode(bool value) { isExplode = value; }
 
 private:
-	Model* exp;
+	//Model* exp;
 
 	ColliderSphere* collider;
 

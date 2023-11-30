@@ -30,9 +30,6 @@
     <ClInclude Include="Scene\Scene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\TutorialScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="MainGame.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -90,19 +87,10 @@
     <ClInclude Include="Utility\Time.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\TextureScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Object\Basic\Quad.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\RobotScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Object\Basic\Box.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\BoxScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\Basic\Box2.h">
@@ -136,9 +124,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\Basic\Circle.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\SphereScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Utility\Utility.h">
@@ -228,16 +213,7 @@
     <ClInclude Include="Model\ModelAnimator.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Model\Groot.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Scene\ModelAnimationScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\Model\Zombie.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\Model\Knife_A.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Collider\Collider.h">
@@ -261,15 +237,6 @@
     <ClInclude Include="Scene\GridScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Model\Skeleton.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\Model\Pumpkin.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\Model\Ghost.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Scene\ShootingScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -288,19 +255,10 @@
     <ClInclude Include="Object\Landscape\SkyBox.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\InstancingScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\ModelInstancingScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Model\ModelInstancing.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Model\ModelAnimatorInstancing.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\LightScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Render\View\DepthStencil.h">
@@ -309,40 +267,49 @@
     <ClInclude Include="Render\View\RenderTarget.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\DeferredRenderScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Render\Buffer\GeometryBuffer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\FrustumCullingScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene\BillboardScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\Model\Bomb.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Scene\ExplosionScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Model\Explosion.h">
+    <ClInclude Include="System\Refraction.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Model\Zombie.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Model\Skeleton.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Model\Pumpkin.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\Model\Player.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="System\Refraction.h">
+    <ClInclude Include="Object\Model\Knife_A.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Model\Bomb2.h">
+    <ClInclude Include="Object\Model\Groot.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Model\Ghost.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Model\Explosion.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Model\Crate.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\Model\Bomb3.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Model\Crate.h">
+    <ClInclude Include="Object\Model\Bomb2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Model\Bomb.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -351,9 +318,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framework.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\TutorialScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="MainGame.cpp">
@@ -404,19 +368,10 @@
     <ClCompile Include="Utility\Time.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\TextureScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Object\Basic\Quad.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\RobotScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Object\Basic\Box.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\BoxScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\Basic\Box2.cpp">
@@ -450,9 +405,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\Basic\Circle.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\SphereScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Utility\Utility.cpp">
@@ -515,16 +467,7 @@
     <ClCompile Include="Model\ModelAnimator.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\Model\Groot.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Scene\ModelAnimationScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\Model\Zombie.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\Model\Knife_A.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Collider\Collider.cpp">
@@ -548,15 +491,6 @@
     <ClCompile Include="Scene\GridScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\Model\Skeleton.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\Model\Pumpkin.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\Model\Ghost.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Scene\ShootingScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -575,19 +509,10 @@
     <ClCompile Include="Object\Landscape\SkyBox.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\InstancingScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\ModelInstancingScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Model\ModelInstancing.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Model\ModelAnimatorInstancing.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\LightScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Render\View\DepthStencil.cpp">
@@ -596,40 +521,49 @@
     <ClCompile Include="Render\View\RenderTarget.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\DeferredRenderScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Render\Buffer\GeometryBuffer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\FrustumCullingScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene\BillboardScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\Model\Bomb.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Scene\ExplosionScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\Model\Explosion.cpp">
+    <ClCompile Include="System\Refraction.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model\Zombie.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model\Skeleton.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model\Pumpkin.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\Model\Player.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="System\Refraction.cpp">
+    <ClCompile Include="Object\Model\Knife_A.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\Model\Bomb2.cpp">
+    <ClCompile Include="Object\Model\Groot.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model\Ghost.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model\Explosion.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model\Crate.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\Model\Bomb3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\Model\Crate.cpp">
+    <ClCompile Include="Object\Model\Bomb2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Model\Bomb.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

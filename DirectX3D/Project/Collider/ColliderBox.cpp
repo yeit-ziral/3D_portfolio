@@ -222,7 +222,7 @@ bool ColliderBox::Block(ColliderSphere* other)
 		else if (dir.y > 0.0f)
 			dir.y = 1.0f;
 
-		_sideCollision = false;
+		//_sideCollision = false;
 		fixedPos.y += dir.y * overlap.y;
 	}
 	else
@@ -232,12 +232,12 @@ bool ColliderBox::Block(ColliderSphere* other)
 		else if (dir.x > 0.0f)
 			dir.x = 1.0f;
 
-		_sideCollision = true;
+		//_sideCollision = true;
 
 		fixedPos.x += dir.x * overlap.x;
 	}
 
-	movable->GetTransform()->SetPosition(fixedPos);
+	other->translation = fixedPos;
 
 	return true;
 }

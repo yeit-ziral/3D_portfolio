@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -134,25 +134,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Object\Model\Crate.h" />
-    <ClInclude Include="Object\Model\Bomb3.h" />
+    <ClInclude Include="Object\Model\Bomb.h" />
     <ClInclude Include="Object\Model\Bomb2.h" />
+    <ClInclude Include="Object\Model\Bomb3.h" />
+    <ClInclude Include="Object\Model\Crate.h" />
     <ClInclude Include="Object\Model\Explosion.h" />
+    <ClInclude Include="Object\Model\Ghost.h" />
+    <ClInclude Include="Object\Model\Groot.h" />
+    <ClInclude Include="Object\Model\Knife_A.h" />
     <ClInclude Include="Object\Model\Player.h" />
+    <ClInclude Include="Object\Model\Pumpkin.h" />
+    <ClInclude Include="Object\Model\Skeleton.h" />
+    <ClInclude Include="Object\Model\Zombie.h" />
     <ClInclude Include="System\Refraction.h" />
     <ClInclude Include="Scene\ExplosionScene.h" />
-    <ClInclude Include="Object\Model\Bomb.h" />
-    <ClInclude Include="Scene\BillboardScene.h" />
-    <ClInclude Include="Scene\FrustumCullingScene.h" />
     <ClInclude Include="Render\Buffer\GeometryBuffer.h" />
-    <ClInclude Include="Scene\DeferredRenderScene.h" />
     <ClInclude Include="Render\View\DepthStencil.h" />
     <ClInclude Include="Render\View\RenderTarget.h" />
-    <ClInclude Include="Scene\LightScene.h" />
     <ClInclude Include="Model\ModelAnimatorInstancing.h" />
     <ClInclude Include="Model\ModelInstancing.h" />
-    <ClInclude Include="Scene\ModelInstancingScene.h" />
-    <ClInclude Include="Scene\InstancingScene.h" />
     <ClInclude Include="Render\State\DepthStencilState.h" />
     <ClInclude Include="Object\UI\ProgressBar.h" />
     <ClInclude Include="Render\State\BlendState.h" />
@@ -160,14 +160,10 @@
     <ClInclude Include="Collider\ColliderCapsule.h" />
     <ClInclude Include="Collider\ColliderSphere.h" />
     <ClInclude Include="Collider\Collider.h" />
-    <ClInclude Include="Object\Model\Ghost.h" />
-    <ClInclude Include="Object\Model\Pumpkin.h" />
     <ClInclude Include="Scene\GridScene.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\CollisionScene.h" />
-    <ClInclude Include="Object\Model\Knife_A.h" />
     <ClInclude Include="Scene\ModelAnimationScene.h" />
-    <ClInclude Include="Object\Model\Groot.h" />
     <ClInclude Include="Model\ModelAnimator.h" />
     <ClInclude Include="Model\ModelClip.h" />
     <ClInclude Include="Object\Basic\ModelA.h" />
@@ -178,7 +174,6 @@
     <ClInclude Include="Model\ModelMesh.h" />
     <ClInclude Include="Model\ModelReader.h" />
     <ClInclude Include="Scene\ModelExportScene.h" />
-    <ClInclude Include="Object\Model\Skeleton.h" />
     <ClInclude Include="Scene\ShootingScene.h" />
     <ClInclude Include="Object\Landscape\Sky.h" />
     <ClInclude Include="Object\Landscape\SkyBox.h" />
@@ -189,13 +184,11 @@
     <ClInclude Include="Render\Shader\ComputeShader.h" />
     <ClInclude Include="Object\Basic\Circle.h" />
     <ClInclude Include="Object\Basic\Sphere.h" />
-    <ClInclude Include="Scene\SphereScene.h" />
     <ClInclude Include="Render\Buffer\StructuredBuffer.h" />
     <ClInclude Include="System\Camera.h" />
     <ClInclude Include="Object\Basic\Box2.h" />
     <ClInclude Include="Render\State\RasterizerState.h" />
     <ClInclude Include="Render\State\SamplerState.h" />
-    <ClInclude Include="Scene\BoxScene.h" />
     <ClInclude Include="Object\Basic\Box.h" />
     <ClInclude Include="Object\Basic\Quad.h" />
     <ClInclude Include="Render\Mesh.h" />
@@ -204,7 +197,6 @@
     <ClInclude Include="Render\Buffer\GlobalBuffer.h" />
     <ClInclude Include="Render\Buffer\ConstBuffer.h" />
     <ClInclude Include="Render\Buffer\IndexBuffer.h" />
-    <ClInclude Include="Scene\RobotScene.h" />
     <ClInclude Include="Render\State\StateManager.h" />
     <ClInclude Include="System\Environment.h" />
     <ClInclude Include="Render\Shader\PixelShader.h" />
@@ -215,7 +207,6 @@
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="Scene\Scene.h" />
     <ClInclude Include="Object\Transform.h" />
-    <ClInclude Include="Scene\TextureScene.h" />
     <ClInclude Include="Render\Texture\Texture.h" />
     <ClInclude Include="Object\Basic\TextureCube.h" />
     <ClInclude Include="Scene\TerrainScene.h" />
@@ -226,13 +217,11 @@
     <ClInclude Include="Utility\Utility.h" />
     <ClInclude Include="Utility\Keyboard.h" />
     <ClInclude Include="Utility\Singleton.h" />
-    <ClInclude Include="Scene\TutorialScene.h" />
     <ClInclude Include="Render\Shader\VertexShader.h" />
     <ClInclude Include="Render\Buffer\VertexBuffer.h" />
     <ClInclude Include="Render\Buffer\VertexLayout.h" />
     <ClInclude Include="Utility\Time.h" />
     <ClInclude Include="Utility\Vector3.h" />
-    <ClInclude Include="Object\Model\Zombie.h" />
     <ClInclude Include="_include\DirectXTex.h" />
     <ClInclude Include="_include\imconfig.h" />
     <ClInclude Include="_include\imgui.h" />
@@ -246,25 +235,25 @@
     <ClInclude Include="__Others\targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Object\Model\Crate.cpp" />
-    <ClCompile Include="Object\Model\Bomb3.cpp" />
+    <ClCompile Include="Object\Model\Bomb.cpp" />
     <ClCompile Include="Object\Model\Bomb2.cpp" />
+    <ClCompile Include="Object\Model\Bomb3.cpp" />
+    <ClCompile Include="Object\Model\Crate.cpp" />
     <ClCompile Include="Object\Model\Explosion.cpp" />
+    <ClCompile Include="Object\Model\Ghost.cpp" />
+    <ClCompile Include="Object\Model\Groot.cpp" />
+    <ClCompile Include="Object\Model\Knife_A.cpp" />
     <ClCompile Include="Object\Model\Player.cpp" />
+    <ClCompile Include="Object\Model\Pumpkin.cpp" />
+    <ClCompile Include="Object\Model\Skeleton.cpp" />
+    <ClCompile Include="Object\Model\Zombie.cpp" />
     <ClCompile Include="System\Refraction.cpp" />
     <ClCompile Include="Scene\ExplosionScene.cpp" />
-    <ClCompile Include="Object\Model\Bomb.cpp" />
-    <ClCompile Include="Scene\BillboardScene.cpp" />
-    <ClCompile Include="Scene\FrustumCullingScene.cpp" />
     <ClCompile Include="Render\Buffer\GeometryBuffer.cpp" />
-    <ClCompile Include="Scene\DeferredRenderScene.cpp" />
     <ClCompile Include="Render\View\DepthStencil.cpp" />
     <ClCompile Include="Render\View\RenderTarget.cpp" />
-    <ClCompile Include="Scene\LightScene.cpp" />
     <ClCompile Include="Model\ModelAnimatorInstancing.cpp" />
     <ClCompile Include="Model\ModelInstancing.cpp" />
-    <ClCompile Include="Scene\ModelInstancingScene.cpp" />
-    <ClCompile Include="Scene\InstancingScene.cpp" />
     <ClCompile Include="Render\State\DepthStencilState.cpp" />
     <ClCompile Include="Object\UI\ProgressBar.cpp" />
     <ClCompile Include="Render\State\BlendState.cpp" />
@@ -272,14 +261,10 @@
     <ClCompile Include="Collider\ColliderCapsule.cpp" />
     <ClCompile Include="Collider\ColliderSphere.cpp" />
     <ClCompile Include="Collider\Collider.cpp" />
-    <ClCompile Include="Object\Model\Ghost.cpp" />
-    <ClCompile Include="Object\Model\Pumpkin.cpp" />
     <ClCompile Include="Scene\GridScene.cpp" />
     <ClCompile Include="Scene\SceneManager.cpp" />
     <ClCompile Include="Scene\CollisionScene.cpp" />
-    <ClCompile Include="Object\Model\Knife_A.cpp" />
     <ClCompile Include="Scene\ModelAnimationScene.cpp" />
-    <ClCompile Include="Object\Model\Groot.cpp" />
     <ClCompile Include="Model\ModelAnimator.cpp" />
     <ClCompile Include="Model\ModelClip.cpp" />
     <ClCompile Include="Object\Basic\ModelA.cpp" />
@@ -289,7 +274,6 @@
     <ClCompile Include="Model\ModelMesh.cpp" />
     <ClCompile Include="Model\ModelReader.cpp" />
     <ClCompile Include="Scene\ModelExportScene.cpp" />
-    <ClCompile Include="Object\Model\Skeleton.cpp" />
     <ClCompile Include="Scene\ShootingScene.cpp" />
     <ClCompile Include="Object\Landscape\Sky.cpp" />
     <ClCompile Include="Object\Landscape\SkyBox.cpp" />
@@ -300,13 +284,11 @@
     <ClCompile Include="Render\Shader\ComputeShader.cpp" />
     <ClCompile Include="Object\Basic\Circle.cpp" />
     <ClCompile Include="Object\Basic\Sphere.cpp" />
-    <ClCompile Include="Scene\SphereScene.cpp" />
     <ClCompile Include="Render\Buffer\StructuredBuffer.cpp" />
     <ClCompile Include="System\Camera.cpp" />
     <ClCompile Include="Object\Basic\Box2.cpp" />
     <ClCompile Include="Render\State\RasterizerState.cpp" />
     <ClCompile Include="Render\State\SamplerState.cpp" />
-    <ClCompile Include="Scene\BoxScene.cpp" />
     <ClCompile Include="Object\Basic\Box.cpp" />
     <ClCompile Include="Object\Basic\Quad.cpp" />
     <ClCompile Include="Render\Mesh.cpp" />
@@ -314,7 +296,6 @@
     <ClCompile Include="Object\Basic\Cube.cpp" />
     <ClCompile Include="Render\Buffer\ConstBuffer.cpp" />
     <ClCompile Include="Render\Buffer\IndexBuffer.cpp" />
-    <ClCompile Include="Scene\RobotScene.cpp" />
     <ClCompile Include="Render\State\StateManager.cpp" />
     <ClCompile Include="System\Environment.cpp" />
     <ClCompile Include="Render\Shader\PixelShader.cpp" />
@@ -325,11 +306,9 @@
     </ClCompile>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainGame.cpp" />
-    <ClCompile Include="Scene\TutorialScene.cpp" />
     <ClCompile Include="Render\Shader\VertexShader.cpp" />
     <ClCompile Include="Render\Buffer\VertexBuffer.cpp" />
     <ClCompile Include="Object\Transform.cpp" />
-    <ClCompile Include="Scene\TextureScene.cpp" />
     <ClCompile Include="Render\Texture\Texture.cpp" />
     <ClCompile Include="Object\Basic\TextureCube.cpp" />
     <ClCompile Include="Scene\TerrainScene.cpp" />
@@ -341,7 +320,6 @@
     <ClCompile Include="Utility\Keyboard.cpp" />
     <ClCompile Include="Utility\Time.cpp" />
     <ClCompile Include="Utility\Vector3.cpp" />
-    <ClCompile Include="Object\Model\Zombie.cpp" />
     <ClCompile Include="_include\ImGuiFileDialog.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
