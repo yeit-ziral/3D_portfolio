@@ -17,5 +17,7 @@ private:
 	//ColliderBox* box;
 
 	Groot* groot;
+
+	Terrain* terrain;
 };
 

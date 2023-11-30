@@ -165,6 +165,60 @@ void Groot::SetClip(AnimState state)
 	}
 }
 
+bool Groot::GetBombIsExist()
+{
+	if (curBomb == 0)
+	{
+		return bomb->IsExist();
+	}
+
+	if (curBomb == 1)
+	{
+		return bomb2->IsExist();
+	}
+
+	if (curBomb == 2)
+	{
+		return bomb3->IsExist();
+	}
+}
+
+Vector3 Groot::GetBombGPos()
+{
+	if (curBomb == 0)
+	{
+		return bomb->GetGlobalPosition();
+	}
+
+	if (curBomb == 1)
+	{
+		return bomb2->GetGlobalPosition();
+	}
+
+	if (curBomb == 2)
+	{
+		return bomb3->GetGlobalPosition();
+	}
+}
+
+void Groot::BombIsGround(bool value)
+{
+	if (curBomb == 0)
+	{
+		bomb->SetGround(value);
+	}
+
+	if (curBomb == 1)
+	{
+		bomb2->SetGround(value);
+	}
+
+	if (curBomb == 2)
+	{
+		bomb3->SetGround(value);
+	}
+}
+
 void Groot::Move()
 {
 	if (!KEY_PRESS(VK_LBUTTON))

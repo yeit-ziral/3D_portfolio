@@ -70,4 +70,3 @@ bool Collider::Block(Collider* other)
 		return false;
 	}
 }
-}

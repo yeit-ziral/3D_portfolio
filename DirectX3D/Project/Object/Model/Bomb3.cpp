@@ -36,13 +36,15 @@ void Bomb3::Update()
 
 			direction.y -= 20.0f * Time::Delta();
 
-			if (isCollision)
+			if (isCollision || isGround)
 			{
 				exp->translation = this->GetGlobalPosition();
 				Explode();
 				translation = CAMERA->GetGlobalPosition();
 				speed = 0.0f;
 				isAppear = false;
+
+				isGround = false;
 			}
 		}
 	}

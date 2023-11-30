@@ -22,6 +22,12 @@ public:
 
 	void SetClip(AnimState state);
 
+	bool GetBombIsExist();
+
+	Vector3 GetBombGPos();
+
+	void BombIsGround(bool value);
+
 private:
 	void Move();
 

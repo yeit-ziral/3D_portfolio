@@ -38,6 +38,9 @@ void Bomb2::Update()
 
 			direction.y -= 0.5f * Time::Delta();
 
+			if (isGround)
+				direction.y = 0;
+
 			if (nowTime > 3.0f)
 			{
 				nowTime = 0.0f;
@@ -47,6 +50,7 @@ void Bomb2::Update()
 				speed = 0.0f;
 				isAppear = false;
 				isExist = false;
+				isGround = false;
 			}
 		}
 	}

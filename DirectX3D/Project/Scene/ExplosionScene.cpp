@@ -3,6 +3,8 @@
 
 ExplosionScene::ExplosionScene()
 {
+	terrain = new Terrain(L"Landscape/Dirt.png", L"HeightMap/HeightMap.png");
+
 	//bomb = new Bomb3();
 
 	//box = new ColliderBox(Vector3(3,3,3));
@@ -15,6 +17,8 @@ ExplosionScene::ExplosionScene()
 
 ExplosionScene::~ExplosionScene()
 {
+	delete terrain;
+
 	//delete bomb;
 	//delete box;
 
@@ -23,6 +27,8 @@ ExplosionScene::~ExplosionScene()
 
 void ExplosionScene::Update()
 {
+	terrain->Update();
+
 	//bomb->Update();
 
 	//if (KEY_PRESS(VK_LBUTTON))
@@ -39,6 +45,15 @@ void ExplosionScene::Update()
 	//box->Update();
 
 	groot->Update();
+
+	terrain->OnTheGround(&groot->translation);
+
+	if (groot->GetBombIsExist())
+	{
+		if (terrain->GetHeight(groot->GetBombGPos()) > groot->GetBombGPos().y)
+			groot->BombIsGround(true);
+	}
+
 	CAMERA->translation = groot->GetGlobalPosition();
 	CAMERA->translation.y += 3.0f;
 	CAMERA->translation.z -= 1.0f;

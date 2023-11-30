@@ -29,6 +29,10 @@ public:
 
 	void Charging();
 
+	void SetGround(bool value) { isGround = value; }
+
+	bool IsExist() { return isExist; }
+
 private:
 	ColliderSphere* collider;
 
@@ -43,4 +47,6 @@ private:
 	bool isCollision = false;
 
 	bool isExist = false;
+
+	bool isGround = false;
 };
