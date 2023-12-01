@@ -4,10 +4,15 @@
 Pumpkin::Pumpkin()
 	:Model("Grenade")
 {
-	scale *= 10.0f;
-
 	collider = new ColliderSphere();
 
+	collider->SetParent(this);
+
+	scale *= 10.0f;
+
+	collider->scale *= 0.066f;
+
+	//collider->
 
 	GetReader()->GetMaterial()[0]->Load(L"Grenade.mat");
 }
@@ -22,26 +27,26 @@ void Pumpkin::Update()
 	Model::Update();
 	collider->Update();
 
-	collider->translation = Model::GetGlobalPosition();
-	collider->translation += {0.0f, 0.4f, 0.0f};
+	//collider->translation = Model::GetGlobalPosition();
+	//collider->translation += {0.0f, 0.4f, 0.0f};
 
-	collider->scale = scale * 0.3f;
+	//collider->scale = scale * 0.3f;
 
-	if (isAppear)
-	{
-		nowTime += Time::Delta();
+	//if (isAppear)
+	//{
+	//	nowTime += Time::Delta();
 
-		translation += direction * speed * Time::Delta();
+	//	translation += direction * speed * Time::Delta();
 
-		direction.y -= 0.5f * Time::Delta();
+	//	direction.y -= 0.5f * Time::Delta();
 
-		if (nowTime > 4.0f)
-		{
-			nowTime = 0.0f;
-			translation = CAMERA->GetGlobalPosition();
-			isAppear = false;
-		}
-	}
+	//	if (nowTime > 4.0f)
+	//	{
+	//		nowTime = 0.0f;
+	//		translation = CAMERA->GetGlobalPosition();
+	//		isAppear = false;
+	//	}
+	//}
 }
 
 void Pumpkin::Render()

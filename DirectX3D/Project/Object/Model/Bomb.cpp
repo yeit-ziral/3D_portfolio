@@ -75,9 +75,13 @@ void Bomb::Render()
 
 void Bomb::Debug()
 {
-	Model::Debug();
+	ImGui::Text("Bomb");
 
-	exp->Debug();
+	//Transform::Debug();
+
+	//Model::Debug();
+
+	//exp->Debug();
 }
 
 void Bomb::Throw()

@@ -176,6 +176,9 @@ bool ColliderBox::Block(ColliderBox* other)
 		else if (dir.x > 0.0f)
 			dir.x = 1.0f;
 
+		dir.y = 0;
+		dir.z = 0;
+
 		fixedPos.x += dir.x * overlap.x;
 	}
 	else if (overlap.x > overlap.y && overlap.z > overlap.y)
@@ -184,6 +187,9 @@ bool ColliderBox::Block(ColliderBox* other)
 			dir.y = -1.0f;
 		else if (dir.y > 0.0f)
 			dir.y = 1.0f;
+
+		dir.x = 0;
+		dir.z = 0;
 
 		fixedPos.y += dir.y * overlap.y;
 	}
@@ -194,12 +200,16 @@ bool ColliderBox::Block(ColliderBox* other)
 		else if (dir.z > 0.0f)
 			dir.z = 1.0f;
 
+		dir.x = 0;
+		dir.y = 0;
+
 		fixedPos.z += dir.z * overlap.z;
 	}
 
 	//other->GetParent()->translation = fixedPos * Time::Delta();
 
-	other->GetParent()->translation += dir * Time::Delta();
+	//other->GetParent()->translation += dir * Time::Delta();
+	other->GetParent()->translation += dir * 0.01f;
 
 	return true;
 }
@@ -209,8 +219,8 @@ bool ColliderBox::Block(ColliderSphere* other)
 	if (!Collision(other))
 		return false;
 
-	Vector3 virtualHalfSize = other->GetGlobalScale();
-	Vector3 dir = other->GetGlobalPosition() - other->GetGlobalPosition();
+	Vector3 virtualHalfSize = other->GetGlobalScale() * 0.5f;
+	Vector3 dir = other->GetGlobalPosition() - this->GetGlobalPosition();
 	Vector3 sum = virtualHalfSize + GetGlobalScale() * 0.5f;
 	Vector3 overlap = Vector3(sum.x - abs(dir.x), sum.y - abs(dir.y), sum.z - abs(dir.z));
 
@@ -239,7 +249,8 @@ bool ColliderBox::Block(ColliderSphere* other)
 		fixedPos.x += dir.x * overlap.x;
 	}
 
-	other->GetParent()->translation = fixedPos;
+	//other->GetParent()->translation = dir * Time::Delta();
+	other->GetParent()->translation += dir * 0.01f;
 
 	return true;
 }

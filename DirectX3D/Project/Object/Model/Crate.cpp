@@ -48,7 +48,9 @@ void Crate::Render()
 
 void Crate::Debug()
 {
-	Model::Debug();
+	ImGui::Text("Crate");
+	//Transform::Debug();
+	//Model::Debug();
 }
 
 void Crate::Move()

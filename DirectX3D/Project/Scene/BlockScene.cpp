@@ -3,34 +3,29 @@
 
 BlockScene::BlockScene()
 {
-	for (int i = 0; i < 3; i++)
-	{
-		crates.emplace_back(new Crate);
-		crates[i]->SetLabel("ColliderSphere" + to_string(i));
-		crates[i]->translation.x = 3 * i;
-	}
+	crate = new Crate();
+
+	crate->translation.x = 0;
+
+	bomb = new Pumpkin();
+
+	bomb->translation.x = 3;
 }
 
 BlockScene::~BlockScene()
 {
-	for (Crate* box : crates)
-	{
-		delete box;
-	}
+	delete crate;
 
-	crates.clear();
+	delete bomb;
 }
 
 void BlockScene::Update()
 {
-	for (Crate* box : crates)
-	{
-		box->Update();
-	}
+	crate->GetCollider()->Block(bomb->GetCollider());
 
-	Vector3 temp = crates[0]->GetCollider()->GetGlobalScale();
+	crate->Update();
 
-	crates[0]->GetCollider()->Block(crates[1]->GetCollider());
+	bomb->Update();
 }
 
 void BlockScene::PreRender()
@@ -39,14 +34,18 @@ void BlockScene::PreRender()
 
 void BlockScene::Render()
 {
-	for (Crate* box : crates)
-	{
-		box->Render();
-	}
+	crate->Render();
+
+	bomb->Render();
 }
 
 void BlockScene::PostRender()
 {
-	for (Crate* box : crates)
-		box->Debug();
+	ImGui::SliderFloat("CratePosX", &crate->translation.x, -10, 10);
+	ImGui::SliderFloat("CratePosY", &crate->translation.y, -10, 10);
+	ImGui::SliderFloat("CratePosZ", &crate->translation.z, -10, 10);
+
+	crate->Debug();
+
+	bomb->Debug();
 }

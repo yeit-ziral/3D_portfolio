@@ -35,7 +35,7 @@ private:
 
 	float nowTime = 0;
 
-	bool isAppear = false;
+	bool isAppear = true;
 
 	Vector3 direction;
 };

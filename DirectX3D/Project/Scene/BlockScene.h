@@ -12,5 +12,7 @@ public:
 	void PostRender();
 
 private:
-	vector<Crate*> crates;
+	Crate* crate;
+
+	Pumpkin* bomb;
 };

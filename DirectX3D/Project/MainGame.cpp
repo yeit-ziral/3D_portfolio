@@ -26,7 +26,7 @@ MainGame::MainGame()
 	//SCENE->Create("Start", new ExplosionScene());
 	SCENE->Create("Start", new BlockScene());
 
-	SCENE->Add("Grid");
+	//SCENE->Add("Grid");
 	//SCENE->Add("Collision");
 	//SCENE->Add("ModelExport");
 	//SCENE->Add("ModelAnimation");
@@ -49,6 +49,12 @@ void MainGame::Update()
 
 	Time::GetInstance()->Update();
 	Keyboard::GetInstance()->Update();
+
+	//if (KEY_PRESS('0')) // Scene ¹Ù²Þ
+	//{
+	//	SCENE->Remove("Start");
+	//	SCENE->Add("Grid");
+	//}
 }
 
 void MainGame::Render()
