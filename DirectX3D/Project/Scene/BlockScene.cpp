@@ -28,6 +28,8 @@ void BlockScene::Update()
 		box->Update();
 	}
 
+	Vector3 temp = crates[0]->GetCollider()->GetGlobalScale();
+
 	crates[0]->GetCollider()->Block(crates[1]->GetCollider());
 }
 

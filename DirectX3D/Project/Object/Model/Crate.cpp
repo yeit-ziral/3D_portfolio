@@ -7,13 +7,19 @@ Crate::Crate()
 	reader = new ModelReader("Crate");
 	GetReader()->GetMaterial()[0]->Load(L"Crate.mat");
 
-	scale *= 0.02;
-
 	collider = new ColliderBox();
 
-	collider->scale = this->GetGlobalScale() * 1.5f;
-
 	collider->SetParent(this);
+
+	scale *= 0.02;
+
+	scale.z *= 0.9f;
+
+	collider->scale.z *= 10.0f / 9.0f;
+
+	collider->scale *= 60;
+
+	collider->translation.z -= 35;
 }
 
 Crate::~Crate()
