@@ -46,7 +46,9 @@ void ExplosionScene::Update()
 
 	groot->Update();
 
-	terrain->OnTheGround(&groot->translation);
+	//terrain->OnTheGround(&groot->translation);
+
+	groot->translation.y = terrain->GetHeight(groot->GetGlobalPosition());
 
 	if (groot->GetBombIsExist())
 	{
