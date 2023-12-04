@@ -3,14 +3,14 @@
 
 CollisionScene::CollisionScene()
 {
-	for (UINT i = 0; i < 2; i++)
+	for (UINT i = 0; i < 1; i++)
 	{
 		colliders.push_back(new ColliderSphere);
 		colliders[i]->SetLabel("ColliderSphere" + to_string(i));
 		colliders[i]->translation.x = 3 * i;
 	}
 
-	for (UINT i = 2; i < 4; i++)
+	for (UINT i = 1; i < 2; i++)
 	{
 		colliders.push_back(new ColliderBox);
 		colliders[i]->SetLabel("ColliderBox" + to_string(i));
@@ -44,7 +44,12 @@ void CollisionScene::Update()
 
 	//colliders[1]->translation = contact.hitPoint;
 
-	if (colliders[2]->Collision(colliders[1]))
+	if (colliders[1]->Collision(colliders[0]))
+		colliders[2]->SetColor(1, 0, 0);
+	else
+		colliders[2]->SetColor(0, 1, 0);
+
+	if (colliders[1]->Collision(colliders[1]))
 		colliders[2]->SetColor(1, 0, 0);
 	else
 		colliders[2]->SetColor(0, 1, 0);

@@ -14,5 +14,5 @@ public:
 private:
 	Crate* crate;
 
-	Pumpkin* bomb;
+	Groot* groot;
 };

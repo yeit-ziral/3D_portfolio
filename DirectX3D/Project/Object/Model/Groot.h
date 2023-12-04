@@ -28,6 +28,8 @@ public:
 
 	void BombIsGround(bool value);
 
+	ColliderSphere* GetCurBombCollider();
+
 private:
 	void Move();
 

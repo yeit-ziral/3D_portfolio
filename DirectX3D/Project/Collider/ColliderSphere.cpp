@@ -70,12 +70,74 @@ bool ColliderSphere::Collision(ColliderCapsule* other)
 
 bool ColliderSphere::Block(ColliderBox* other)
 {
-    return false;
+    if (!Collision(other))
+        return false;
+
+    Vector3 virtualHalfSize = other->GetGlobalScale() * 0.5f;
+    Vector3 dir = other->GetGlobalPosition() - this->GetGlobalPosition();
+    Vector3 sum = virtualHalfSize + GetGlobalScale() * 0.5f;
+    Vector3 overlap = Vector3(sum.x - abs(dir.x), sum.y - abs(dir.y), sum.z - abs(dir.z));
+
+    Vector3 fixedPos = other->GetGlobalPosition();
+
+    dir.Normalize();
+    if (overlap.y > overlap.x && overlap.z > overlap.x)
+    {
+        if (dir.x < 0.0f)
+            dir.x = -1.0f;
+        else if (dir.x > 0.0f)
+            dir.x = 1.0f;
+
+        dir.y = 0;
+        dir.z = 0;
+
+        fixedPos.x += dir.x * overlap.x;
+    }
+    else if (overlap.x > overlap.y && overlap.z > overlap.y)
+    {
+        if (dir.y < 0.0f)
+            dir.y = -1.0f;
+        else if (dir.y > 0.0f)
+            dir.y = 1.0f;
+
+        dir.x = 0;
+        dir.z = 0;
+
+        fixedPos.y += dir.y * overlap.y;
+    }
+    else if (overlap.x > overlap.z && overlap.y > overlap.z)
+    {
+        if (dir.z < 0.0f)
+            dir.z = -1.0f;
+        else if (dir.z > 0.0f)
+            dir.z = 1.0f;
+
+        dir.x = 0;
+        dir.y = 0;
+
+        fixedPos.z += dir.z * overlap.z;
+    }
+
+    //other->GetParent()->translation = dir * Time::Delta();
+    other->GetParent()->translation += dir * 0.01f;
+
+    return true;
 }
 
 bool ColliderSphere::Block(ColliderSphere* other)
 {
-    return false;
+    if (!Collision(other))
+        return false;
+
+    Vector3 moveableCenter = other->GetGlobalPosition();
+    Vector3 blockCenter = this->GetGlobalPosition();
+    Vector3 dir = moveableCenter - blockCenter;
+    float scalar = abs((other->GetGlobalScale().x + GetGlobalScale().x) - dir.Length());
+    dir.Normalize();
+
+    other->GetParent()->translation += dir * 0.01f;
+    //other->translation += (dir * scalar * Time::Delta());
+
 }
 
 void ColliderSphere::CreateMesh()

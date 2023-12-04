@@ -219,6 +219,24 @@ void Groot::BombIsGround(bool value)
 	}
 }
 
+ColliderSphere* Groot::GetCurBombCollider()
+{
+	if (curBomb == 0)
+	{
+		return bomb->GetCollider();
+	}
+
+	if (curBomb == 1)
+	{
+		return bomb2->GetCollider();
+	}
+
+	if (curBomb == 2)
+	{
+		return bomb3->GetCollider();
+	}
+}
+
 void Groot::Move()
 {
 	if (!KEY_PRESS(VK_LBUTTON))

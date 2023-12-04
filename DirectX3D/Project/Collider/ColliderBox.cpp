@@ -227,26 +227,41 @@ bool ColliderBox::Block(ColliderSphere* other)
 	Vector3 fixedPos = other->GetGlobalPosition();
 
 	dir.Normalize();
-	if (overlap.x > overlap.y)
-	{
-		if (dir.y < 0.0f)
-			dir.y = -1.0f;
-		else if (dir.y > 0.0f)
-			dir.y = 1.0f;
-
-		//_sideCollision = false;
-		fixedPos.y += dir.y * overlap.y;
-	}
-	else
+	if (overlap.y > overlap.x && overlap.z > overlap.x)
 	{
 		if (dir.x < 0.0f)
 			dir.x = -1.0f;
 		else if (dir.x > 0.0f)
 			dir.x = 1.0f;
 
-		//_sideCollision = true;
+		dir.y = 0;
+		dir.z = 0;
 
 		fixedPos.x += dir.x * overlap.x;
+	}
+	else if (overlap.x > overlap.y && overlap.z > overlap.y)
+	{
+		if (dir.y < 0.0f)
+			dir.y = -1.0f;
+		else if (dir.y > 0.0f)
+			dir.y = 1.0f;
+
+		dir.x = 0;
+		dir.z = 0;
+
+		fixedPos.y += dir.y * overlap.y;
+	}
+	else if (overlap.x > overlap.z && overlap.y > overlap.z)
+	{
+		if (dir.z < 0.0f)
+			dir.z = -1.0f;
+		else if (dir.z > 0.0f)
+			dir.z = 1.0f;
+
+		dir.x = 0;
+		dir.y = 0;
+
+		fixedPos.z += dir.z * overlap.z;
 	}
 
 	//other->GetParent()->translation = dir * Time::Delta();
