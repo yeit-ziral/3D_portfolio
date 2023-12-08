@@ -43,8 +43,6 @@ private:
 	float takeTime = 0.2f;
 
 	Model* weapon;
-	Model* weapon2;
-	Model* weapon3;
 
 	Transform* leftHand;
 
