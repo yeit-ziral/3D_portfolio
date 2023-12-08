@@ -6,13 +6,15 @@ Bomb3::Bomb3()
 {
 	GetReader()->GetMaterial()[0]->Load(L"Bomb.mat");
 
-	scale *= 1.0f;
+	scale *= 5.0f;
 
 	rotation.x += XM_PIDIV2;
 
 	collider = new ColliderSphere();
 
 	collider->SetParent(this);
+
+	collider->scale *= 0.06f;
 
 	exp = new Explosion();
 }
@@ -34,7 +36,9 @@ void Bomb3::Update()
 		{
 			translation += direction * speed * Time::Delta();
 
-			direction.y -= 20.0f * Time::Delta();
+			Vector3 temp = this->GetGlobalPosition();
+
+			direction.y -= 0.5f * Time::Delta();
 
 			if (isCollision || isGround)
 			{

@@ -39,6 +39,8 @@ Groot::Groot()
 	bomb  = new Bomb();
 	bomb2 = new Bomb2();
 	bomb3 = new Bomb3();
+
+	bomb3->translation = this->GetGlobalPosition() + Vector3(0, 2, 0);
 }
 
 Groot::~Groot()
@@ -93,7 +95,7 @@ void Groot::Update()
 
 void Groot::Render()
 {
-	ModelAnimator::Render();
+	//ModelAnimator::Render();
 	weapon->Render();
 	bomb->Render();
 	bomb2->Render();
@@ -237,6 +239,24 @@ ColliderSphere* Groot::GetCurBombCollider()
 	}
 }
 
+void Groot::SetBombPos(Vector3 value)
+{
+	if (curBomb == 0)
+	{
+		bomb->translation = value;
+	}
+
+	if (curBomb == 1)
+	{
+		bomb2->translation = value;
+	}
+
+	if (curBomb == 2)
+	{
+		bomb3->translation = value;
+	}
+}
+
 void Groot::Move()
 {
 	if (!KEY_PRESS(VK_LBUTTON))
@@ -282,7 +302,7 @@ void Groot::Throw()
 {
 	if (curBomb == 0)
 	{
-		if (KEY_PRESS(VK_LBUTTON))
+		if (KEY_PRESS(VK_LBUTTON) && !bomb->IsAppear())
 		{
 			bomb->Charging();
 		}
@@ -306,10 +326,14 @@ void Groot::Throw()
 	{
 		if (KEY_PRESS(VK_LBUTTON))
 		{
+			bomb3->translation = Vector3(0, 3, 0);
 			bomb3->Charging();
 		}
 
 		else if (KEY_UP(VK_LBUTTON) && !bomb3->IsAppear())
+		{
+			bomb3->SetGround(false);
 			bomb3->Throw();
+		}
 	}
 }

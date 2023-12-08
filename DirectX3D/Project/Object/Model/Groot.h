@@ -30,6 +30,8 @@ public:
 
 	ColliderSphere* GetCurBombCollider();
 
+	void SetBombPos(Vector3 value);
+
 private:
 	void Move();
 

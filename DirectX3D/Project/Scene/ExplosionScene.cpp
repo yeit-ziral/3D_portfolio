@@ -13,6 +13,8 @@ ExplosionScene::ExplosionScene()
 
 	groot = new Groot();
 	groot->scale *= 0.1f;
+
+	skybox = new SkyBox(L"Landscape/SpaceBox.dds");
 }
 
 ExplosionScene::~ExplosionScene()
@@ -23,6 +25,8 @@ ExplosionScene::~ExplosionScene()
 	//delete box;
 
 	delete groot;
+
+	delete skybox;
 }
 
 void ExplosionScene::Update()
@@ -43,9 +47,6 @@ void ExplosionScene::Update()
 	//	bomb->SetCollision(true);
 
 	//box->Update();
-
-	groot->Update();
-
 	//terrain->OnTheGround(&groot->translation);
 
 	groot->translation.y = terrain->GetHeight(groot->GetGlobalPosition());
@@ -56,9 +57,12 @@ void ExplosionScene::Update()
 			groot->BombIsGround(true);
 	}
 
+	groot->Update();
+
+
 	CAMERA->translation = groot->GetGlobalPosition();
 	CAMERA->translation.y += 3.0f;
-	CAMERA->translation.z -= 1.0f;
+	//CAMERA->translation.z -= 1.0f;
 	CAMERA->rotation.y = groot->rotation.y + XM_PI;
 }
 
@@ -68,9 +72,13 @@ void ExplosionScene::PreRender()
 
 void ExplosionScene::Render()
 {
+	skybox->Render();
+
 	//bomb->Render();
 
 	//box->Render();
+
+	terrain->Render();
 
 	groot->Render();
 }

@@ -19,5 +19,7 @@ private:
 	Groot* groot;
 
 	Terrain* terrain;
+
+	SkyBox* skybox;
 };
 
