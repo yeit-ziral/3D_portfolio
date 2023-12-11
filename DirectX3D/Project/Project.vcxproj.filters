@@ -276,7 +276,7 @@
     <ClInclude Include="System\Refraction.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Model\Zombie.h">
+    <ClInclude Include="Object\Model\Boss.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\Model\Skeleton.h">
@@ -533,7 +533,7 @@
     <ClCompile Include="System\Refraction.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\Model\Zombie.cpp">
+    <ClCompile Include="Object\Model\Boss.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\Model\Skeleton.cpp">

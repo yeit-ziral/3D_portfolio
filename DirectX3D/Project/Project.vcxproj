@@ -146,7 +146,7 @@
     <ClInclude Include="Object\Model\Player.h" />
     <ClInclude Include="Object\Model\Pumpkin.h" />
     <ClInclude Include="Object\Model\Skeleton.h" />
-    <ClInclude Include="Object\Model\Zombie.h" />
+    <ClInclude Include="Object\Model\Boss.h" />
     <ClInclude Include="System\Refraction.h" />
     <ClInclude Include="Scene\ExplosionScene.h" />
     <ClInclude Include="Render\Buffer\GeometryBuffer.h" />
@@ -248,7 +248,7 @@
     <ClCompile Include="Object\Model\Player.cpp" />
     <ClCompile Include="Object\Model\Pumpkin.cpp" />
     <ClCompile Include="Object\Model\Skeleton.cpp" />
-    <ClCompile Include="Object\Model\Zombie.cpp" />
+    <ClCompile Include="Object\Model\Boss.cpp" />
     <ClCompile Include="System\Refraction.cpp" />
     <ClCompile Include="Scene\ExplosionScene.cpp" />
     <ClCompile Include="Render\Buffer\GeometryBuffer.cpp" />

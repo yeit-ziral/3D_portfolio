@@ -1,21 +1,19 @@
 #pragma once
-class Zombie : public ModelAnimator
+class Boss : public ModelAnimator
 {
 	enum AnimState
 	{
-		IDLE, RUN, ATTACK
+		IDLE, ATTACK, DIE
 	}; 
 	AnimState curState = AnimState::IDLE;
 public:
-	Zombie();
-	~Zombie();
+	Boss();
+	~Boss();
 
 	void Update();
 	void Render();
 
 	void Debug();
-
-	void UpdateLeftHand();
 
 	void SetClip(AnimState state);
 
@@ -24,17 +22,7 @@ private:
 
 private:
 
-	float speed = 1.0f;
-	float takeTime = 0.2f;
-
-	//class Knife_A* weapon;
-	class Bomb* weapon;
-
-
-	Transform* leftHand;
-
-
-	float moveSpeed = 20.0f;
-
-	float rotSpeed = 3.0f;
+	ColliderSphere* fingertip;
+	ColliderSphere* head;
+	ColliderBox* body;
 };
