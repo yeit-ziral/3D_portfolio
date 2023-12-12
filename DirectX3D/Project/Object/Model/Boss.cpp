@@ -6,6 +6,14 @@
 Boss::Boss()
 	:ModelAnimator("Knight D Pelegrini")
 {
+	ReadClip("Breathing Idle");
+	ReadClip("Pushing");
+	ReadClip("Death");
+	CreateTexture();
+
+	reader->GetMaterial()[0]->Load(L"Knight_MAT2.mat");
+
+	clips[ATTACK]->SetEndEvent(0.7f, bind(&Boss::SetClip, this, IDLE));
 }
 
 Boss::~Boss()
@@ -14,62 +22,33 @@ Boss::~Boss()
 
 void Boss::Update()
 {
+	ModelAnimator::Update();
+
+	if (KEY_DOWN('1'))
+		PlayClip( 0, speed, takeTime);
+
+	if (KEY_DOWN('2'))
+		PlayClip( 1, speed, takeTime);
+
+	if (KEY_DOWN('3'))
+		PlayClip( 2, speed, takeTime);
 }
 
 void Boss::Render()
 {
+	ModelAnimator::Render();
 }
 
 void Boss::Debug()
 {
+	ModelAnimator::Debug();
 }
 
 void Boss::SetClip(AnimState state)
 {
 	if (curState != state)
 	{
-		PlayClip( state);
+		PlayClip(state);
 		curState = state;
-	}
-}
-
-void Boss::Move()
-{
-	if (!KEY_PRESS(VK_LBUTTON))
-	{
-		if (KEY_PRESS('W'))
-		{
-			//Ray ray = CAMERA->ScreenPointToRay({ WIN_WIDTH * 0.5f, WIN_HEIGHT * 0.5f, 0.0f });
-
-			//Vector2 dir = { ray.direction.x, ray.direction.z };
-			//
-			//float theta = -atan2f(dir.y, dir.x) * 2;
-
-			//rotation.y = theta + (PI * 1.304f);//CAMERA->GetRotY();
-			translation -= Forward() * moveSpeed * Time::Delta();
-			SetClip(RUN);
-		}
-
-		if (KEY_PRESS('S'))
-		{
-			translation -= Backward() * moveSpeed * Time::Delta();
-			SetClip(RUN);
-		}
-		if (KEY_UP('W') || KEY_UP('S'))
-			SetClip(IDLE);
-
-		if (KEY_PRESS('A'))
-		{
-			rotation.y -= rotSpeed * Time::Delta();
-		}
-		if (KEY_PRESS('D'))
-		{
-			rotation.y += rotSpeed * Time::Delta();
-		}
-
-		if (KEY_DOWN(VK_LBUTTON))
-		{
-			SetClip(ATTACK);
-		}
 	}
 }

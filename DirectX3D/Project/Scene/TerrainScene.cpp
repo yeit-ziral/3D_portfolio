@@ -12,10 +12,10 @@ TerrainScene::TerrainScene()
 	//terrain->GetMaterial()->SetNormalMap(L"Landscape/fieldsone_NM.tga");
 
 	//sphere = new Sphere();
-	zombie = new Zombie();
-	zombie->scale *= 0.001;
+	//zombie = new Zombie();
+	//zombie->scale *= 0.001;
 
-	CAMERA->SetParent(zombie);
+	//CAMERA->SetParent(zombie);
 	CAMERA->translation = { 0.0f, 1000.0f, 0.0f };
 }
 
@@ -23,7 +23,7 @@ TerrainScene::~TerrainScene()
 {
 	delete terrain;
 
-	delete zombie;
+	//delete zombie;
 }
 
 void TerrainScene::Update()
@@ -31,7 +31,7 @@ void TerrainScene::Update()
 	terrain->Update();
 
 	//sphere->Update();
-	zombie->Update();
+	//zombie->Update();
 
 	if (KEY_DOWN(VK_LBUTTON))
 	{
@@ -40,28 +40,28 @@ void TerrainScene::Update()
 		//sphere->translation = pickedPos;
 		//sphere->translation.y += sphere->scale.y;
 
-		zombie->translation = pickedPos;
+		//zombie->translation = pickedPos;
 	}
 
 	if (KEY_PRESS('W'))
 	{
-		zombie->translation.z += Time::Delta() * 50;
-		terrain->OnTheGround(&zombie->translation);
+		//zombie->translation.z += Time::Delta() * 50;
+		//terrain->OnTheGround(&zombie->translation);
 		//class AnimState* state = AnimState::RUN;
 		//zombie->SetClip();
 	}
 	if (KEY_PRESS('S'))
 	{
-		zombie->rotation.y -= Time::Delta() * 50;
-		terrain->OnTheGround(&zombie->translation);
+		//zombie->rotation.y -= Time::Delta() * 50;
+		//terrain->OnTheGround(&zombie->translation);
 	}
 	if (KEY_PRESS('A'))
 	{
-		zombie->rotation.y += Time::Delta() * 50;
+		//zombie->rotation.y += Time::Delta() * 50;
 	}
 	if (KEY_PRESS('D'))
 	{
-		zombie->translation.x -= Time::Delta() * 50;
+		//zombie->translation.x -= Time::Delta() * 50;
 	}
 }
 
@@ -75,7 +75,7 @@ void TerrainScene::Render()
 
 	//sphere->Render();
 
-	zombie->Render();
+	//zombie->Render();
 }
 
 void TerrainScene::PostRender()

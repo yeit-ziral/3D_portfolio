@@ -23,10 +23,11 @@ MainGame::MainGame()
 	//SCENE->Create("ModelExport", new ModelExportScene);
 	//SCENE->Create("ModelAnimation", new LightScene);
 	//SCENE->Create("Shooting", new ShootingScene);
-	SCENE->Create("Start", new ExplosionScene());
+	//SCENE->Create("Start", new ExplosionScene());
 	//SCENE->Create("Start", new BlockScene());
+	SCENE->Create("Start", new BossScene());
 
-	//SCENE->Add("Grid");
+	SCENE->Add("Grid");
 	//SCENE->Add("Collision");
 	//SCENE->Add("ModelExport");
 	//SCENE->Add("ModelAnimation");

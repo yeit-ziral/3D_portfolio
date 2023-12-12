@@ -18,11 +18,12 @@ public:
 	void SetClip(AnimState state);
 
 private:
-	void Move();
-
-private:
 
 	ColliderSphere* fingertip;
 	ColliderSphere* head;
 	ColliderBox* body;
+
+
+	float speed = 1.0f;
+	float takeTime = 0.2f;
 };

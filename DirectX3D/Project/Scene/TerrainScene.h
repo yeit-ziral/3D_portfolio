@@ -20,7 +20,7 @@ private:
 
 	Vector3 pickedPos;
 
-	Zombie* zombie;
+	//Zombie* zombie;
 
 	Groot* groot;
 };

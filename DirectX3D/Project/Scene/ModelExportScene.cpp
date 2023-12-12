@@ -3,21 +3,25 @@
 
 ModelExportScene::ModelExportScene()
 {
-	//string name = "groot";
+	string name = "Knight D Pelegrini";
 
 	//exporter = new ModelExporter(name);
-	////modelAnimator = new ModelAnimator(name);
-	//
-	//exporter->ExportModel();
+	modelAnimator = new ModelAnimator(name);
+
+	modelAnimator->ReadClip("Breathing Idle");
+	modelAnimator->ReadClip("Pushing");
+	modelAnimator->ReadClip("Death");
 	
-	//exporter->ExportClip("Sad Idle");
-	//exporter->ExportClip("Drunk Run Forward");
-	//exporter->ExportClip("Throw");
+	//exporter->ExportModel();
+	//
+	//exporter->ExportClip("Breathing Idle");
+	//exporter->ExportClip("Pushing");
+	//exporter->ExportClip("Death");
 
 	//reader = new ModelReader(name);
 	//
 	//reader->SetShader(L"02ModelAnimation");
-	
+	//
 
 	//bodyparts.resize(reader->GetMeshes().size());
 	//
@@ -33,7 +37,7 @@ ModelExportScene::ModelExportScene()
 	//////model->scale *= 30.0f;
 	//model->scale *= 0.01;
 
-	groot = new Groot();
+	//groot = new Groot();
 	//pumpkin = new Ghost();
 }
 
@@ -42,8 +46,8 @@ ModelExportScene::~ModelExportScene()
 	//delete exporter;
 	//delete model;
 
-	delete groot;
-	//delete modelAnimator;
+	//delete groot;
+	delete modelAnimator;
 }
 
 void ModelExportScene::Update()
@@ -57,7 +61,7 @@ void ModelExportScene::Update()
 
 	//modelAnimator->Update();
 
-	groot->Update();
+	//groot->Update();
 
 	//pumpkin->Update();
 }
@@ -77,7 +81,7 @@ void ModelExportScene::Render()
 
 	//modelAnimator->Render();
 
-	groot->Render();
+	//groot->Render();
 
 	//pumpkin->Render();
 }
@@ -89,7 +93,7 @@ void ModelExportScene::PostRender()
 
 	//modelAnimator->Debug();
 
-	groot->Debug();
+	//groot->Debug();
 
 	//pumpkin->Debug();
 }
