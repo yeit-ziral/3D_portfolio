@@ -20,19 +20,19 @@ MainGame::MainGame()
 
 	SCENE->Create("Grid", new GridScene());
 	//SCENE->Create("Collision", new CollisionScene());
-	//SCENE->Create("ModelExport", new ModelExportScene);
+	SCENE->Create("ModelExport", new ModelExportScene);
 	//SCENE->Create("ModelAnimation", new LightScene);
 	//SCENE->Create("Shooting", new ShootingScene);
 	//SCENE->Create("Start", new ExplosionScene());
 	//SCENE->Create("Start", new BlockScene());
-	SCENE->Create("Start", new BossScene());
+	//SCENE->Create("Start", new BossScene());
 
 	SCENE->Add("Grid");
 	//SCENE->Add("Collision");
-	//SCENE->Add("ModelExport");
+	SCENE->Add("ModelExport");
 	//SCENE->Add("ModelAnimation");
 	//SCENE->Add("Shooting");
-	SCENE->Add("Start");
+	//SCENE->Add("Start");
 
 	FONT->Add("D2Coding", L"D2Coding");
 }

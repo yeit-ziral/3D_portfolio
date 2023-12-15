@@ -6,10 +6,10 @@
 Boss::Boss()
 	:ModelAnimator("Knight D Pelegrini")
 {
+	CreateTexture();
 	ReadClip("Breathing Idle");
 	ReadClip("Pushing");
 	ReadClip("Death");
-	CreateTexture();
 
 	reader->GetMaterial()[0]->Load(L"Knight_MAT2.mat");
 

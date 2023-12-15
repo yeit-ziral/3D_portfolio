@@ -4,7 +4,7 @@
 BossScene::BossScene()
 {
 	boss = new Boss();
-	boss->translation *= 0.5f;
+	boss->scale *= 0.1f;
 }
 
 BossScene::~BossScene()
