@@ -5,31 +5,31 @@ BlockScene::BlockScene()
 {
 	//crate = new Crate();
 	
-	groot = new Groot();
-	groot->scale *= 0.1f;
+	//groot = new Groot();
+	//groot->scale *= 0.1f;
 
-	crate = new Crate();
+	crates = new CrateInstancing();
 
-	crate->translation.x = 30;
+	//crate->translation.x = 30;
 
-	CAMERA->translation = { 0,0,0 };
+	//CAMERA->translation = { 0,0,0 };
 }
 
 BlockScene::~BlockScene()
 {
-	delete groot;
+	//delete groot;
 
-	delete crate;
+	delete crates;
 }
 
 void BlockScene::Update()
 {
 	//crate->GetCollider()->Block(bomb->GetCollider());
-	crate->GetCollider()->Block(groot->GetCurBombCollider());
+	//crate->GetCollider()->Block(groot->GetCurBombCollider());
 
-	groot->Update();
+	//groot->Update();
 
-	crate->Update();
+	crates->Update();
 
 	//CAMERA->translation = groot->GetGlobalPosition();
 	//CAMERA->translation.y += groot->GetGlobalScale().y;
@@ -41,9 +41,9 @@ void BlockScene::PreRender()
 
 void BlockScene::Render()
 {
-	groot->Render();
+	//groot->Render();
 
-	crate->Render();
+	crates->Render();
 }
 
 void BlockScene::PostRender()
@@ -52,11 +52,11 @@ void BlockScene::PostRender()
 	//ImGui::SliderFloat("CratePosY", &crate->translation.y, -10, 10);
 	//ImGui::SliderFloat("CratePosZ", &crate->translation.z, -10, 10);
 
-	ImGui::SliderFloat("CratePosX", &crate->translation.x, -10, 10);
-	ImGui::SliderFloat("CratePosY", &crate->translation.y, -10, 10);
-	ImGui::SliderFloat("CratePosZ", &crate->translation.z, -10, 10);
+	//ImGui::SliderFloat("CratePosX", &crate->translation.x, -10, 10);
+	//ImGui::SliderFloat("CratePosY", &crate->translation.y, -10, 10);
+	//ImGui::SliderFloat("CratePosZ", &crate->translation.z, -10, 10);
 
-	crate->Debug();
+	crates->Debug();
 
-	groot->PostRender();
+	//groot->PostRender();
 }

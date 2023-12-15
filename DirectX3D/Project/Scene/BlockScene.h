@@ -12,7 +12,7 @@ public:
 	void PostRender();
 
 private:
-	Crate* crate;
+	CrateInstancing* crates;
 
 	Groot* groot;
 };

@@ -19,8 +19,13 @@ VertexOutput
     
     /////////////////////////
     
-    matrix transform = mul(SkinWorld(input.index, input.indices, input.weight), input.transform);
+    matrix transform;
     
+    [branch]
+    if (hasAnimation)
+        transform = mul(SkinWorld(input.index, input.indices, input.weight), input.transform);
+    else
+        transform = input.transform;
     output.pos = mul(input.pos, transform);
     ////////////////////////
     

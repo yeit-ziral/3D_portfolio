@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\Model\CrateInstancing.h" />
     <ClInclude Include="Scene\BossScene.h" />
     <ClInclude Include="Scene\BlockScene.h" />
     <ClInclude Include="Object\Model\Bomb.h" />
@@ -237,6 +238,7 @@
     <ClInclude Include="__Others\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\Model\CrateInstancing.cpp" />
     <ClCompile Include="Scene\BossScene.cpp" />
     <ClCompile Include="Scene\BlockScene.cpp" />
     <ClCompile Include="Object\Model\Bomb.cpp" />

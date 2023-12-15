@@ -9,7 +9,7 @@ ModelInstancing::ModelInstancing(string name)
     instanceBuffer = new VertexBuffer(instanceDatas);
 
     reader->SetShader(L"08ModelAnimatorInstancing");
-
+    
 }
 
 ModelInstancing::~ModelInstancing()

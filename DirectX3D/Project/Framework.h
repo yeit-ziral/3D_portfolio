@@ -187,6 +187,7 @@ using namespace MyMath;
 #include "Object/Model/Bomb3.h"
 #include "Object/Model/Crate.h"
 #include "Object/Model/Boss.h"
+#include "Object/Model/CrateInstancing.h"
 
 #include "Scene/Scene.h"
 #include "Scene/TerrainScene.h"

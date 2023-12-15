@@ -12,7 +12,7 @@ public:
 
 	Transform* Add();
 
-private:
+protected:
 
 	vector<Transform*> transforms;
 
