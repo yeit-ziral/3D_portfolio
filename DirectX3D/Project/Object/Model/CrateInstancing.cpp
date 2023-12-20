@@ -35,10 +35,23 @@ void CrateInstancing::Update()
 	{
 		colBoxies[i]->translation = transforms[i]->GetGlobalPosition();
 		colBoxies[i]->translation.z -= 2;
+		colBoxies[i]->SetIsActive(transforms[i]->IsActive());
 	}
 
 	for (ColliderBox* colBox : colBoxies)
-		colBox->Update();
+		if (colBox->IsActive())
+			colBox->Update();
+
+	if (colBoxies[0]->Collision(colBoxies[1]))
+	{
+		colBoxies[0]->SetIsActive(false);
+		transforms[0]->SetIsActive(false);
+	}
+	else
+	{
+		colBoxies[0]->SetIsActive(true);
+		transforms[0]->SetIsActive(true);
+	}
 }
 
 void CrateInstancing::Render()
@@ -46,7 +59,8 @@ void CrateInstancing::Render()
 	ModelInstancing::Render();
 
 	for (ColliderBox* colBox : colBoxies)
-		colBox->Render();
+		if (colBox->IsActive())
+			colBox->Render();
 }
 
 void CrateInstancing::Debug()
@@ -54,5 +68,6 @@ void CrateInstancing::Debug()
 	ModelInstancing::Debug();
 
 	for (ColliderBox* colBox : colBoxies)
-		colBox->Debug();
+		//if (colBox->IsActive())
+			colBox->Debug();
 }

@@ -60,7 +60,7 @@ void Transform::Debug()
 
 		ImGui::DragFloat3("Translation", (float*)&translation, 0.01f, -WIN_WIDTH, WIN_WIDTH);
 
-
+		ImGui::Checkbox("IsActive", &isActive);
 
 		ImGui::EndMenu();
 	}
