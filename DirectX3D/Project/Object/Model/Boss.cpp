@@ -14,6 +14,15 @@ Boss::Boss()
 	reader->GetMaterial()[0]->Load(L"Knight_MAT2.mat");
 
 	clips[ATTACK]->SetEndEvent(0.7f, bind(&Boss::SetClip, this, IDLE));
+
+	col = new ColliderSphere();
+
+	for (int a = 0; a < 10; a++)
+	{
+		Bomb* bomb = new Bomb();
+
+		bombs.emplace_back(bomb);
+	}
 }
 
 Boss::~Boss()
@@ -51,4 +60,21 @@ void Boss::SetClip(AnimState state)
 		PlayClip(state);
 		curState = state;
 	}
+}
+
+void Boss::Attack1()
+{
+}
+
+void Boss::Attack2()
+{
+}
+
+void Boss::Attack3()
+{
+}
+
+void Boss::Move()
+{
+
 }
